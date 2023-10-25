@@ -25,6 +25,7 @@
     };
     nur.url = "github:nix-community/nur";
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -83,7 +84,7 @@
         farnsworth = mkNixos [ ./nixos/hosts/farnsworth ];
 
         # Laptop
-        #amy = mkNixos [ ./nixos/hosts/amy ];
+        amy = mkNixos [ ./nixos/hosts/amy ];
 
       };
 
@@ -97,9 +98,9 @@
 
       # Standalone home-manager configuration entrypoint
       # Available through 'home-manager --flake .#your-username@your-hostname'
-      homeConfigurations = {
+      #homeConfigurations = {
         # TODO: add generic standalone home-manager config
-      };
+      #};
     };
 }
 
