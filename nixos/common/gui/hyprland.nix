@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  imports =
+    [
+      ./common.nix
+    ];
+
 # XDG Portals
   xdg = {
     autostart.enable = true;
