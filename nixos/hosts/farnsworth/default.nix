@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../common/nixos/common.nix
+      ../../common/networking/zerotier.nix
       # Include the necessary packages and configuration for Apple Silicon support.
       inputs.apple-silicon.nixosModules.apple-silicon-support
     ];
