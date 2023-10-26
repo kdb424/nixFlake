@@ -25,7 +25,10 @@
     };
     nur.url = "github:nix-community/nur";
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
+    #nix-doom-emacs = {
+    #  url = "github:nix-community/nix-doom-emacs";
+    #  inputs.nixpkgs.follows = "nixpkgs-unstable";
+    #};
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
