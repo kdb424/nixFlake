@@ -25,6 +25,7 @@
     };
     nur.url = "github:nix-community/nur";
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    hyprland.url = "github:hyprwm/Hyprland";
     #nix-doom-emacs = {
     #  url = "github:nix-community/nix-doom-emacs";
     #  inputs.nixpkgs.follows = "nixpkgs-unstable";
