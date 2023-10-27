@@ -11,6 +11,7 @@
       ../../common/nixos/common.nix
       ../../common/networking/zerotier.nix
       ../../common/gui/hyprland.nix
+      ../../common/editors/emacs.nix
     ];
 
   # Use the systemd-boot EFI boot loader.

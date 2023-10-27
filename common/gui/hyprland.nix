@@ -102,7 +102,7 @@
     polkit_gnome
     libva-utils
     fuseiso
-    udiskie
+    #udiskie
     gnome.adwaita-icon-theme
     gnome.gnome-themes-extra
     gsettings-desktop-schemas
