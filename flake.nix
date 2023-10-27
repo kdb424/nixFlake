@@ -26,10 +26,10 @@
     nur.url = "github:nix-community/nur";
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     hyprland.url = "github:hyprwm/Hyprland";
-    #nix-doom-emacs = {
-    #  url = "github:nix-community/nix-doom-emacs";
-    #  inputs.nixpkgs.follows = "nixpkgs-unstable";
-    #};
+    emacs = {
+      url = "github:nix-community/emacs-overlay";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -85,10 +85,10 @@
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {
         # M1 mac mini
-        farnsworth = mkNixos [ ./nixos/hosts/farnsworth ];
+        farnsworth = mkNixos [ ./hosts/farnsworth ];
 
         # Laptop
-        amy = mkNixos [ ./nixos/hosts/amy ];
+        amy = mkNixos [ ./hosts/amy ];
 
       };
 
