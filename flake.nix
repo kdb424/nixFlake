@@ -104,41 +104,11 @@
       cubert = mkDarwin "aarch64-darwin" [./hosts/cubert];
     };
     homeConfigurations = {
-      "kdb424@cubert" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          ./home-manager/machines/cubert.nix
-        ];
-      };
-      "kdb424@farnsworth" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.aarch64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          ./home-manager/machines/headless.nix
-        ];
-      };
-      "kdb424@planex" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          ./home-manager/machines/headless.nix
-        ];
-      };
-      "kdb424@zapp" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          ./home-manager/machines/headless.nix
-        ];
-      };
-      "kdb424@amy" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          ./home-manager/machines/amy.nix
-        ];
-      };
+      "kdb424@amy" = mkHome [./home-manager/machines/amy.nix] nixpkgs.legacyPackages.x86_64-linux;
+      "kdb424@cubert" = mkHome [./home-manager/machines/cubert.nix] nixpkgs.legacyPackages.aarch64-darwin;
+      "kdb424@farnsworth" = mkHome [./home-manager/machines/farnsworth.nix] nixpkgs.legacyPackages.aarch64-linux;
+      "kdb424@planex" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.x86_64-linux;
+      "kdb424@zapp" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.x86_64-linux;
     };
   };
 }
