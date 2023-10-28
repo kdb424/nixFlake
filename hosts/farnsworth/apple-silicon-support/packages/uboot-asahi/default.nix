@@ -1,9 +1,9 @@
-{ lib
-, fetchFromGitHub
-, buildUBoot
-, m1n1
+{
+  lib,
+  fetchFromGitHub,
+  buildUBoot,
+  m1n1,
 }:
-
 (buildUBoot rec {
   src = fetchFromGitHub {
     # tracking: https://github.com/AsahiLinux/PKGBUILDs/blob/main/uboot-asahi/PKGBUILD
@@ -15,7 +15,7 @@
   version = "2023.07.02.asahi3-1";
 
   defconfig = "apple_m1_defconfig";
-  extraMeta.platforms = [ "aarch64-linux" ];
+  extraMeta.platforms = ["aarch64-linux"];
   filesToInstall = [
     "u-boot-nodtb.bin.gz"
     "m1n1-u-boot.bin"
@@ -27,9 +27,10 @@
     CONFIG_VIDEO_FONT_SUN12X22=n
     CONFIG_VIDEO_FONT_16X32=y
   '';
-}).overrideAttrs (o: {
+})
+.overrideAttrs (o: {
   # nixos's downstream patches are not applicable
-  patches = [ 
+  patches = [
   ];
 
   # flag somehow breaks DTC compilation so we remove it

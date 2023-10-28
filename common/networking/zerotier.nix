@@ -1,17 +1,19 @@
-{ config, lib, pkgs, inputs, outputs, ... }:
-
 {
-
+  config,
+  lib,
+  pkgs,
+  inputs,
+  outputs,
+  ...
+}: {
   services.zerotierone = {
     joinNetworks = [
       "4e72329aec6688e3"
     ];
     enable = true;
-  
   };
 
-  networking.extraHosts =
-  ''
+  networking.extraHosts = ''
     192.168.194.109 planex.far
     192.168.194.210 farnsworth.far
     192.168.194.24 zapp.far
@@ -20,5 +22,4 @@
     192.168.194.38 cubert.far
 
   '';
-
 }

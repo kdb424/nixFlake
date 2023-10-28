@@ -1,11 +1,13 @@
-{ config, lib, pkgs, inputs, outputs, ... }:
-
 {
-
-  services.emacs = 
-  {
+  config,
+  lib,
+  pkgs,
+  inputs,
+  outputs,
+  ...
+}: {
+  services.emacs = {
     enable = true;
     package = pkgs.emacs; # replace with emacs-gtk, or a version provided by the community overlay if desired.
-    };
-
+  };
 }

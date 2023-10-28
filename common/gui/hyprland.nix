@@ -1,12 +1,14 @@
-{ config, pkgs, inputs, ... }:
-
 {
-  imports =
-    [
-      ./common.nix
-    ];
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    ./common.nix
+  ];
 
-# XDG Portals
+  # XDG Portals
   xdg = {
     autostart.enable = true;
     portal = {
@@ -25,13 +27,13 @@
       '';
     };
   };
-# Services
+  # Services
   services = {
     xserver = {
       enable = true;
       layout = "us";
       xkbVariant = "";
-      excludePackages = [ pkgs.xterm ];
+      excludePackages = [pkgs.xterm];
       videoDrivers = ["amdgpu"];
       libinput = {
         enable = true;
@@ -84,7 +86,7 @@
     waybar = {
       enable = true;
       package = pkgs.waybar.overrideAttrs (oldAttrs: {
-        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+        mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
       });
     };
     thunar = {
@@ -148,6 +150,5 @@
     GTK_USE_PORTAL = "1";
     NIXOS_XDG_OPEN_USE_PORTAL = "1";
     WLR_NO_HARDWARE_CURSOR = "1";
-  }; 
-
+  };
 }

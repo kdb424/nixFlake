@@ -1,7 +1,11 @@
-{ config, lib, pkgs, inputs, outputs, ... }:
-
 {
-
+  config,
+  lib,
+  pkgs,
+  inputs,
+  outputs,
+  ...
+}: {
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
 
@@ -19,5 +23,4 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-
 }

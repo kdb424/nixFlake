@@ -1,10 +1,13 @@
-{ config, lib, pkgs, inputs, outputs, ... }:
-
 {
-
+  config,
+  lib,
+  pkgs,
+  inputs,
+  outputs,
+  ...
+}: {
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
 
   # Configure keymap in X11
   services.xserver = {
@@ -21,5 +24,4 @@
   hardware.bluetooth.enable = true;
 
   programs.sway.enable = true;
-
 }

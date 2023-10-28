@@ -1,24 +1,28 @@
-{ config, lib, pkgs, inputs, outputs, ... }:
-
 {
-  imports =
-    [
-      ./packages.nix
-      ./users.nix
-      ./locale.nix
-    ];
+  config,
+  lib,
+  pkgs,
+  inputs,
+  outputs,
+  ...
+}: {
+  imports = [
+    ./packages.nix
+    ./users.nix
+    ./locale.nix
+  ];
   #
   nixpkgs.config.allowUnfree = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   nix.settings.auto-optimise-store = true;
   nix.optimise.automatic = true;
 
   nix.gc = {
-  automatic = true;
-  dates = "weekly";
-  options = "--delete-older-than 14d";
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 14d";
   };
 
   # This value determines the NixOS release from which the default
@@ -28,5 +32,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }

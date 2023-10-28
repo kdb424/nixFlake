@@ -1,11 +1,10 @@
 # This file defines overlays
-{ inputs, ... }:
-{
+{inputs, ...}: {
   # This one brings our custom packages from the 'pkgs' directory
   additions = final: _prev: {
     # nest everything under a namespace that's not likely to collide
     # with anything in nixpkgs
-    local-pkgs = import ../pkgs { pkgs = final; };
+    local-pkgs = import ../pkgs {pkgs = final;};
   };
 
   # This one contains whatever you want to overlay

@@ -1,7 +1,10 @@
 # the Asahi Linux kernel and options that must go along with it
-
-{ config, pkgs, lib, ... }:
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   config = {
     boot.kernelPackages = let
       pkgs' = config.hardware.asahi.pkgs;
