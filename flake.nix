@@ -103,5 +103,42 @@
       # M2 Mac mini
       cubert = mkDarwin "aarch64-darwin" [./hosts/cubert];
     };
+    homeConfigurations = {
+      "kdb424@cubert" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          ./home-manager/machines/cubert.nix
+        ];
+      };
+      "kdb424@farnsworth" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.aarch64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          ./home-manager/machines/headless.nix
+        ];
+      };
+      "kdb424@planex" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          ./home-manager/machines/headless.nix
+        ];
+      };
+      "kdb424@zapp" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          ./home-manager/machines/headless.nix
+        ];
+      };
+      "kdb424@amy" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          ./home-manager/machines/amy.nix
+        ];
+      };
+    };
   };
 }
