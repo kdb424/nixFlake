@@ -99,18 +99,9 @@
       amy = mkNixos [./hosts/amy];
     };
 
-    #darwinConfigurations = {
-    # 14" M1-Pro macbook
-    #sef-macbook = mkDarwin "aarch64-darwin" [ ./darwin/hosts/macbook.nix ];
-
-    # 16" intel MBP (ShareFile dev)
-    #AMERMACC02FC2U2MD6R = mkDarwin "x86_64-darwin" [ ./darwin/hosts/work-macbook.nix ];
-    #};
-
-    # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#your-username@your-hostname'
-    #homeConfigurations = {
-    # TODO: add generic standalone home-manager config
-    #};
+    darwinConfigurations = {
+      # M2 Mac mini
+      cubert = mkDarwin "aarch64-darwin" [./hosts/cubert];
+    };
   };
 }
