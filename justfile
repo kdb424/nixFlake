@@ -54,8 +54,15 @@ gc generations="5d":
   sudo nix-env --delete-generations {{generations}}
   sudo nix-store --gc
 
+# Build home manager
 hm-build:
   home-manager build --flake .
 
+# Switch to home manager
 hm-switch:
   home-manager switch --flake .
+
+# Nuclear option to get space back
+gc-full:
+  sudo nix-env --delete-generations old
+  sudo nix-store --gc
