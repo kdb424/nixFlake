@@ -23,12 +23,14 @@
       url = "github:pta2002/nixvim";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-    nur.url = "github:nix-community/nur";
-    firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     hyprland.url = "github:hyprwm/Hyprland";
     emacs = {
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+    pre-commit-hooks = {
+      url = "github:cachix/pre-commit-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

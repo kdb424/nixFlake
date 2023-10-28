@@ -5,6 +5,7 @@
     "JetBrainsMono"
     "FantasqueSansMono"
     "Iosevka"
+    "Meslo"
   ];
 in {
   fonts = {
@@ -21,6 +22,7 @@ in {
           powerline-fonts
           liberation_ttf
           iosevka
+          meslo-lgs-nf # p10k
           ;
       };
   };
