@@ -11,6 +11,8 @@ in {
     inputs.home-manager.darwinModules.home-manager
     ./fonts.nix
     ./packages.nix
+    ./yabai.nix
+    ./yabai-scripting-additions.nix
   ];
 
   home-manager.extraSpecialArgs = {inherit inputs outputs;};
@@ -23,8 +25,10 @@ in {
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = [
-    pkgs.vim
+  environment.systemPackages = with pkgs; [
+    vim
+    home-manager
+    iterm2
   ];
 
   #security.pam.enableSudoTouchIdAuth = true;
@@ -36,6 +40,11 @@ in {
   nix.package = pkgs.nix;
   nix.extraOptions =
     ''
+      # Determinate systems options
+      build-users-group = nixbld
+      bash-prompt-prefix = (nix:$name)\040
+      max-jobs = auto
+      extra-nix-path = nixpkgs=flake:nixpkgs
       experimental-features = nix-command flakes repl-flake
     ''
     + lib.optionalString (pkgs.system == "aarch64-darwin") ''
