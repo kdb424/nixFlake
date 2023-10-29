@@ -18,6 +18,7 @@ trace target_host=hostname: (build target_host "--show-trace")
 switch target_host=hostname: (build target_host)
   @echo "switching to new config for {{target_host}}"
   # if macOS updates and overwrites /etc/shells, nix will refuse to update it
+  sudo touch /etc/shells
   sudo mv /etc/shells /tmp/shells.bak
   ./result/sw/bin/darwin-rebuild switch --flake ".#{{target_host}}"
 
