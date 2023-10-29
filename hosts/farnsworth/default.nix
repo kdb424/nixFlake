@@ -13,6 +13,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../common/nixos/common.nix
+    ../../common/nixos/docker.nix
     ../../common/networking/zerotier.nix
     ../../common/editors/emacs.nix
     # Include the necessary packages and configuration for Apple Silicon support.
