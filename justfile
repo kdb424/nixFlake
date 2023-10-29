@@ -15,7 +15,7 @@ trace target_host=hostname: (build target_host "--show-trace")
 
 # Build the nix-darwin configuration and switch to it
 [macos]
-switch target_host=hostname: (build target_host)
+switch target_host=hostname: (build target_host) && reload-skhd
   #!/usr/bin/env bash
   set -euxo pipefail
   echo "switching to new config for {{target_host}}"
