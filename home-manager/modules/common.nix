@@ -70,9 +70,6 @@
       grex # regex made easy
       git-cliff # useful commit messages
 
-      # general shell stuff
-      awk
-
       # nix tools
       comma # Command IS found I said
       nix-prefetch-github
