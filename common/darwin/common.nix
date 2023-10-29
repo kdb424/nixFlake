@@ -29,6 +29,7 @@ in {
     vim
     home-manager
     iterm2
+    gimp
   ];
 
   #security.pam.enableSudoTouchIdAuth = true;

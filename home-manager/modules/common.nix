@@ -62,26 +62,19 @@
 
       picocom # microcontrollers
 
-      # TODO Remove this
-      # languages
-      nim
-      rustup
-
       # docs
       pandoc
-
       gnumake
-
-      # TODO To this
 
       # Useful utils
       grex # regex made easy
       git-cliff # useful commit messages
 
-      # nix-only tools
-      comma # Command IS found I said
+      # general shell stuff
+      awk
 
       # nix tools
+      comma # Command IS found I said
       nix-prefetch-github
       nix-index # needed by comma
       direnv
