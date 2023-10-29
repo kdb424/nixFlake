@@ -32,7 +32,7 @@ in {
       window_placement = "second_child";
       window_shadow = "on";
       window_border = "off";
-      window_border_width= "2";
+      window_border_width = "2";
       active_window_border_color = "0xff$CACTV";
       normal_window_border_color = "0xff$CNORM";
       insert_window_border_color = "0xff$CINSE";
@@ -40,26 +40,26 @@ in {
       #status_bar                  = "on";
       #status_bar_background_color = "0xff$CBACK";
       #status_bar_foreground_color = "0xff$CFORE";
-      mouse_follows_focus         = "off";
-      focus_follows_mouse         = "autofocus";
-      window_opacity              = "off";
-      window_opacity_duration     = "0.0";
-      active_window_opacity       = "1.0";
-      normal_window_opacity       = "0.90";
-      split_ratio                 = "0.50";
-      auto_balance                = "off";
-      mouse_modifier              = "ctrl";
-      mouse_action1               = "move";
-      mouse_action2               = "resize";
-      mouse_drop_action           = "swap";
+      mouse_follows_focus = "off";
+      focus_follows_mouse = "autofocus";
+      window_opacity = "off";
+      window_opacity_duration = "0.0";
+      active_window_opacity = "1.0";
+      normal_window_opacity = "0.90";
+      split_ratio = "0.50";
+      auto_balance = "off";
+      mouse_modifier = "ctrl";
+      mouse_action1 = "move";
+      mouse_action2 = "resize";
+      mouse_drop_action = "swap";
       # Turning on breaks kodi
-      window_topmost =              "off";
-      layout                      = "bsp";
-      top_padding                 = "10";
-      bottom_padding              = "10";
-      left_padding                = "10";
-      right_padding               = "10";
-      window_gap                  = "10";
+      window_topmost = "off";
+      layout = "bsp";
+      top_padding = "10";
+      bottom_padding = "10";
+      left_padding = "10";
+      right_padding = "10";
+      window_gap = "10";
     };
 
     extraConfig =
