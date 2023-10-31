@@ -13,5 +13,6 @@
   };
 
   virtualisation.docker.enable = true;
+  virtualisation.docker.liveRestore = false;
   users.users.kdb424.extraGroups = ["docker"];
 }
