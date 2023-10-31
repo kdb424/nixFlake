@@ -15,4 +15,8 @@
   virtualisation.docker.enable = true;
   virtualisation.docker.liveRestore = false;
   users.users.kdb424.extraGroups = ["docker"];
+
+  environment.systemPackages = with pkgs; [
+    docker_24
+  ];
 }
