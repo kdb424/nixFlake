@@ -13,6 +13,8 @@
     description = "Kyle Brown";
     extraGroups = ["networkmanager" "wheel"];
     shell = pkgs.zsh;
+    uid = 1000;
+    initialHashedPassword = "$6$8MS0DbAybsWGJt4a$zIX6v7qP3zS.uoJRv2jknz.KZ7QESNPGK.EvJ1Z0o8XDgDTZaYSAGRZ6dfRrl/22IS2DVogjAAgS15QJCcLwG1";
     packages = with pkgs; [
       yadm
     ];
