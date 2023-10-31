@@ -22,5 +22,6 @@
     wget
     home-manager
     yadm
+    git
   ];
 }
