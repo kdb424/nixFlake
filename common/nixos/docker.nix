@@ -7,7 +7,7 @@
   ...
 }: {
   fileSystems."/mnt/docker" = {
-    device = "planex.far:/mnt/exos/docker";
+    device = "kif.far:/mnt/t7blue/docker";
     fsType = "nfs";
     options = ["x-systemd.automount" "noauto"];
   };
