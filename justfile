@@ -65,10 +65,20 @@ gc generations="5d":
 
 # Build home manager
 hm-build:
+  #!/usr/bin/env bash
+  # If this directory doesn't exist, build will fail
+  if ! test -f ~/.local/state/nix/profiles; then
+    mkdir -p ~/.local/state/nix/profiles
+  fi
   home-manager build --flake .
 
 # Switch to home manager
 hm-switch:
+  #!/usr/bin/env bash
+  # If this directory doesn't exist, build will fail
+  if ! test -f ~/.local/state/nix/profiles; then
+    mkdir -p ~/.local/state/nix/profiles
+  fi
   home-manager switch --flake .
 
 # Nuclear option to get space back
