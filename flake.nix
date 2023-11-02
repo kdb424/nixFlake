@@ -98,6 +98,9 @@
 
       # Small intel server
       kif = mkNixos [./hosts/kif];
+
+      # Ryzen Second gen
+      morbo = mkNixos [./hosts/morbo];
     };
 
     darwinConfigurations = {
@@ -110,6 +113,7 @@
       "kdb424@farnsworth" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.aarch64-linux;
       "kdb424@planex" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.x86_64-linux;
       "kdb424@kif" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.x86_64-linux;
+      "kdb424@morbo" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.x86_64-linux;
       "kdb424@zapp" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.x86_64-linux;
     };
   };
