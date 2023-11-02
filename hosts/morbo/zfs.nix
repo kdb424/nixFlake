@@ -16,7 +16,7 @@
 
   # Enable mail server for zed
   nixpkgs.config.packageOverrides = pkgs: {
-    zfsStable = pkgs.zfsStable.override { enableMail = true; };
+    zfsStable = pkgs.zfsStable.override {enableMail = true;};
   };
 
   services.zfs = {
