@@ -99,6 +99,9 @@
       # Small intel server
       kif = mkNixos [./hosts/kif];
 
+      # Ryzen first gen
+      planex = mkNixos [./hosts/planex];
+
       # Ryzen Second gen
       morbo = mkNixos [./hosts/morbo];
     };
