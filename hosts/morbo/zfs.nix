@@ -10,7 +10,10 @@
     ../../common/nixos/zfs.nix
   ];
   networking.hostId = "dbcb155c";
-  boot.zfs.extraPools = ["red"];
+  boot.zfs.extraPools = [
+    "red"
+    "t7blue"
+  ];
 
   services.zfs.autoSnapshot.enable = true;
 }
