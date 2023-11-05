@@ -10,7 +10,6 @@
   ...
 }: {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../common/nixos/common.nix
     ../../common/networking/zerotier.nix
@@ -25,6 +24,7 @@
   networking.hostName = "amy"; # Define your hostname.
   networking.networkmanager.enable = true;
 
+  services.fwupd.enable = true;
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
