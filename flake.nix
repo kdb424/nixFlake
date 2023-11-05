@@ -28,6 +28,8 @@
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
+    pre-commit-hooks.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -63,6 +65,14 @@
         extraSpecialArgs = {inherit inputs outputs;};
       };
   in rec {
+    checks = forAllSystems (system: {
+	pre-commit-check = inputs.pre-commit-hooks.lib.${system}.run {
+	      src = ./.;
+	      hooks = {
+		alejandra.enable = true;
+	      };
+	    };
+    });
     # Your custom packages
     # Acessible through 'nix build', 'nix shell', etc
     #packages = forAllSystems (system:
