@@ -16,6 +16,7 @@
     ../../common/gui/hyprland.nix
     ../../common/editors/emacs.nix
   ];
+  home-manager.users.kdb424 = import ../../home-manager/machines/amy.nix;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;

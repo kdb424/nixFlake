@@ -15,6 +15,8 @@
     ../../common/nixos/docker.nix
   ];
 
+  home-manager.users.kdb424 = import ../../home-manager/machines/headless.nix;
+
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";

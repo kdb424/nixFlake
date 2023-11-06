@@ -148,12 +148,7 @@
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
       in {
-        "kdb424@amy" = mkHome [./home-manager/machines/amy.nix] {inherit pkgs;};
         "kdb424@cubert" = mkHome [./home-manager/machines/cubert.nix] {inherit pkgs;};
-        "kdb424@farnsworth" = mkHome [./home-manager/machines/headless.nix] {inherit pkgs;};
-        "kdb424@planex" = mkHome [./home-manager/machines/headless.nix] {inherit pkgs;};
-        "kdb424@kif" = mkHome [./home-manager/machines/headless.nix] {inherit pkgs;};
-        "kdb424@morbo" = mkHome [./home-manager/machines/headless.nix] {inherit pkgs;};
         "kdb424@zapp" = mkHome [./home-manager/machines/headless.nix] {inherit pkgs;};
       }
     );
