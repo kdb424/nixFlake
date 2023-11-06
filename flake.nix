@@ -50,7 +50,7 @@
     mkNixos = modules:
       nixpkgs.lib.nixosSystem {
         inherit modules;
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit inputs outputs home-manager;};
       };
 
     mkDarwin = system: modules:
@@ -66,12 +66,12 @@
       };
   in rec {
     checks = forAllSystems (system: {
-	pre-commit-check = inputs.pre-commit-hooks.lib.${system}.run {
-	      src = ./.;
-	      hooks = {
-		alejandra.enable = true;
-	      };
-	    };
+      pre-commit-check = inputs.pre-commit-hooks.lib.${system}.run {
+        src = ./.;
+        hooks = {
+          alejandra.enable = true;
+        };
+      };
     });
     # Your custom packages
     # Acessible through 'nix build', 'nix shell', etc
@@ -116,18 +116,26 @@
       morbo = mkNixos [./hosts/morbo];
     };
 
-    darwinConfigurations = {
-      # M2 Mac mini
-      cubert = mkDarwin "aarch64-darwin" [./hosts/cubert];
-    };
-    homeConfigurations = {
-      "kdb424@amy" = mkHome [./home-manager/machines/amy.nix] nixpkgs.legacyPackages.x86_64-linux;
-      "kdb424@cubert" = mkHome [./home-manager/machines/cubert.nix] nixpkgs.legacyPackages.aarch64-darwin;
-      "kdb424@farnsworth" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.aarch64-linux;
-      "kdb424@planex" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.x86_64-linux;
-      "kdb424@kif" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.x86_64-linux;
-      "kdb424@morbo" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.x86_64-linux;
-      "kdb424@zapp" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.x86_64-linux;
-    };
+    darwinConfigurations = forAllSystems (
+      system: let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in {
+        # M2 Mac mini
+        cubert = mkDarwin {inherit system;} [./hosts/cubert];
+      }
+    );
+    homeConfigurations = forAllSystems (
+      system: let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in {
+        "kdb424@amy" = mkHome [./home-manager/machines/amy.nix] {inherit pkgs;};
+        "kdb424@cubert" = mkHome [./home-manager/machines/cubert.nix] {inherit pkgs;};
+        "kdb424@farnsworth" = mkHome [./home-manager/machines/headless.nix] {inherit pkgs;};
+        "kdb424@planex" = mkHome [./home-manager/machines/headless.nix] {inherit pkgs;};
+        "kdb424@kif" = mkHome [./home-manager/machines/headless.nix] {inherit pkgs;};
+        "kdb424@morbo" = mkHome [./home-manager/machines/headless.nix] {inherit pkgs;};
+        "kdb424@zapp" = mkHome [./home-manager/machines/headless.nix] {inherit pkgs;};
+      }
+    );
   };
 }

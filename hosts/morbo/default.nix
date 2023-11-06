@@ -4,6 +4,7 @@
   pkgs,
   inputs,
   outputs,
+  home-manager,
   ...
 }: {
   imports = [

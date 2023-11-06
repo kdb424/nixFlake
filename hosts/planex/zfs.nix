@@ -11,7 +11,7 @@
   ];
   networking.hostId = "eb081e21";
   boot.zfs.extraPools = ["exos"];
-  boot.kernelParams = [ "zfs.zfs_arc_max=26843545600" ]; # 25GB
+  boot.kernelParams = ["zfs.zfs_arc_max=26843545600"]; # 25GB
 
   services.zfs.autoSnapshot.enable = true;
 
