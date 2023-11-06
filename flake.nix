@@ -144,13 +144,9 @@
         cubert = mkDarwin {inherit system;} [./hosts/cubert];
       }
     );
-    homeConfigurations = forAllSystems (
-      system: let
-        pkgs = nixpkgs.legacyPackages.${system};
-      in {
-        "kdb424@cubert" = mkHome [./home-manager/machines/cubert.nix] {inherit pkgs;};
-        "kdb424@zapp" = mkHome [./home-manager/machines/headless.nix] {inherit pkgs;};
-      }
-    );
+    homeConfigurations = {
+      "kdb424@cubert" = mkHome [./home-manager/machines/cubert.nix] nixpkgs.legacyPackages.aarch64-darwin;
+      "kdb424@zapp" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.x86_64-linux;
+    };
   };
 }
