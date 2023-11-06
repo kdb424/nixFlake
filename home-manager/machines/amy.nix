@@ -25,7 +25,7 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   imports = [
-    ../modules/common.nix
+    #../modules/common.nix
     ../modules/commonGUI.nix
     ../modules/linuxGUI.nix
   ];

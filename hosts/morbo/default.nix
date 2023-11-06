@@ -28,4 +28,6 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  home-manager.users.kdb424 = import ../../home-manager/machines/headless.nix;
 }
