@@ -10,7 +10,7 @@ in {
     ../../common/darwin/common.nix
   ];
 
-  #home-manager.users.kdb242 = import ../../home-manager/kdb424/hosts/macbook-darwin.nix;
+  home-manager.users.kdb424 = import ../../home-manager/machines/cubert.nix;
 
   system.stateVersion = 4;
 }
