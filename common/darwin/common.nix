@@ -16,6 +16,8 @@ in {
   ];
 
   home-manager.extraSpecialArgs = {inherit inputs outputs;};
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
 
   users.users.kdb424 = {
     name = "kdb424";
