@@ -43,12 +43,17 @@
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-index-database = {
+      url = "github:Mic92/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    nix-index-database,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -69,7 +74,9 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
             }
+            nix-index-database.hmModules.nix-index
           ];
+        programs.nix-index-database.comma.enable = true;
         specialArgs = {inherit inputs outputs home-manager;};
       };
 

@@ -2,6 +2,9 @@
   config,
   lib,
   pkgs,
+  inputs,
+  outputs,
+  nix-index-database,
   ...
 }: {
   home.packages = with pkgs;
@@ -37,7 +40,7 @@
       mkvtoolnix # the only container that matters
       hyperfine # benchmark
       neofetch # Check what system I'm on
-      comma # run things without installing them
+      # comma # run things without installing them
       screen # multiplexer
 
       # vcs
@@ -193,6 +196,5 @@
     ";
     settings = {ignorecase = true;};
   };
-
   nixpkgs.config.allowUnfree = true;
 }
