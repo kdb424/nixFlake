@@ -9,7 +9,7 @@
 in {
   imports = [
     inputs.home-manager.darwinModules.home-manager
-    ./fonts.nix
+    # ./fonts.nix
     ./packages.nix
     ./yabai.nix
     ./yabai-scripting-additions.nix

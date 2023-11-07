@@ -7,7 +7,6 @@
   home-manager,
   ...
 }: {
-
   home-manager.users.kdb424 = import ../../home-manager/machines/headless.nix;
 
   imports = [
