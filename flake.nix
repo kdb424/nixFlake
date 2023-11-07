@@ -136,14 +136,11 @@
       morbo = mkNixos [./hosts/morbo];
     };
 
-    darwinConfigurations = forAllSystems (
-      system: let
-        pkgs = nixpkgs.legacyPackages.${system};
-      in {
-        # M2 Mac mini
-        cubert = mkDarwin {inherit system;} [./hosts/cubert];
-      }
-    );
+    darwinConfigurations = {
+      # M2 Mac mini
+      cubert = mkDarwin "aarch64-darwin" [./hosts/cubert];
+    };
+
     homeConfigurations = {
       "kdb424@cubert" = mkHome [./home-manager/machines/cubert.nix] nixpkgs.legacyPackages.aarch64-darwin;
       "kdb424@zapp" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.x86_64-linux;
