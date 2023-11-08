@@ -34,6 +34,7 @@ in {
       gpu = "git push";
       gpf = "git push --force";
       reload = "source ~/.zshrc";
+      lol = "";
 
       # Changing dirs with just dots.
       "." = "cd ../";

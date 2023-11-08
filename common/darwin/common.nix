@@ -8,16 +8,15 @@
   inherit (inputs) nixpkgs;
 in {
   imports = [
-    inputs.home-manager.darwinModules.home-manager
-    # ./fonts.nix
+    # inputs.home-manager.darwinModules.home-manager
     ./packages.nix
     ./yabai.nix
     ./yabai-scripting-additions.nix
   ];
 
-  home-manager.extraSpecialArgs = {inherit inputs outputs;};
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
+  # home-manager.extraSpecialArgs = {inherit inputs outputs;};
+  # home-manager.useGlobalPkgs = true;
+  # home-manager.useUserPackages = true;
 
   users.users.kdb424 = {
     name = "kdb424";

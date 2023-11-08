@@ -67,6 +67,10 @@ in {
 
       # TODO Port out and clean up
 
+      # HM is bad at this. Handle it
+      trysource ''${HOME}/.nix-profile/etc/profile.d/hm-session-vars.sh
+      trysource /etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh
+
       # Configure completion style
       # zstyle ":completion:*:commands" rehash 1
       zstyle ':completion:*:sudo:*' environ PATH="$SUDO_PATH:$PATH"
