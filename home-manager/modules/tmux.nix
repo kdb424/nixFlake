@@ -55,6 +55,8 @@
       bind-key -T copy-mode-vi 'v' send -X begin-selection # start selecting text with "v"
       bind-key -T copy-mode-vi 'y' send -X copy-selection # copy text with "y"
 
+      # Evil escape fix
+      set -s escape-time 0
     '';
   };
 

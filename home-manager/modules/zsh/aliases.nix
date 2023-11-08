@@ -42,7 +42,6 @@ in {
       "..." = "cd ../../../";
       "...." = "cd ../../../../";
 
-
       # Misc alieses I use often
       rmd = "rm -rf";
       mine = "sudo chown -R $(whoami):users";

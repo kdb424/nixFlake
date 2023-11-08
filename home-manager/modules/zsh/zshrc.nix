@@ -33,7 +33,6 @@ in {
       # For autocompletion of command line switches for aliases
       setopt COMPLETE_ALIASES
 
-      source "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh"
 
       # setup any-nix-shell integration
       ${pkgs.any-nix-shell}/bin/any-nix-shell zsh --info-right | source /dev/stdin

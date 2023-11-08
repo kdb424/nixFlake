@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
@@ -9,8 +10,16 @@
     ./tmux.nix
     ./vim.nix
     ./zsh
+    inputs.nix-index-database.hmModules.nix-index
   ];
   nixpkgs.config.allowUnfree = true;
+
+  # Enable nix-index
+  programs.nix-index-database.comma.enable = true;
+
+  # Enable shell integration
+  programs.nix-index.enable = true;
+
   home.packages = with pkgs;
     [
       # Make sure ZSH is installed
@@ -43,15 +52,11 @@
       mkvtoolnix # the only container that matters
       hyperfine # benchmark
       neofetch # Check what system I'm on
-      comma # run things without installing them
       screen # multiplexer
 
       # vcs
       git
       git-lfs
-
-      # editors
-      #vim
 
       # tui apps
       #ncdu_2
@@ -77,9 +82,7 @@
       git-cliff # useful commit messages
 
       # nix tools
-      comma # Command IS found I said
       nix-prefetch-github
-      nix-index # needed by comma
       direnv
       nix-direnv
       cachix
