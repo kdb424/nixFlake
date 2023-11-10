@@ -16,8 +16,6 @@
     ../../common/nixos/docker.nix
   ];
 
-  home-manager.users.kdb424 = import ../../home-manager/machines/headless.nix;
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

@@ -20,8 +20,6 @@
     inputs.apple-silicon.nixosModules.apple-silicon-support
   ];
 
-  home-manager.users.kdb424 = import ../../home-manager/machines/headless.nix;
-
   # Specify path to peripheral firmware files.
   hardware.asahi.peripheralFirmwareDirectory = ./firmware;
 
