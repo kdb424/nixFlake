@@ -29,4 +29,7 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  # use TLP for power management
+  services.tlp.enable = true;
 }
