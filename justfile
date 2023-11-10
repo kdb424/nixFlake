@@ -44,6 +44,11 @@ rebuild_flags := `if [ -d /boot/asahi ]; then echo "--impure"; else echo ""; fi`
 build target_host=hostname flags="":
 	nixos-rebuild build --flake .#{{target_host}} {{rebuild_flags}} {{flags}}
 
+# Build the NixOS configuration without switching to it
+[linux]
+build-vm target_host=hostname flags="":
+	nixos-rebuild build-vm --flake .#{{target_host}} {{rebuild_flags}} {{flags}}
+
 # Build the NixOS config with the --show-trace flag set
 [linux]
 trace target_host=hostname: (build target_host "--show-trace")
@@ -55,7 +60,7 @@ switch target_host=hostname:
 
 # Update flake inputs to their latest revisions
 update:
-  nix flake update
+  nix flake update --commit-lock-file
 
 
 # Garbage collect old OS generations and remove stale packages from the nix store
