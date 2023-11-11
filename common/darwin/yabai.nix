@@ -36,10 +36,6 @@ in {
       active_window_border_color = "0xff$CACTV";
       normal_window_border_color = "0xff$CNORM";
       insert_window_border_color = "0xff$CINSE";
-      #external_bar = "all:26:0";
-      #status_bar                  = "on";
-      #status_bar_background_color = "0xff$CBACK";
-      #status_bar_foreground_color = "0xff$CFORE";
       mouse_follows_focus = "off";
       focus_follows_mouse = "autofocus";
       window_opacity = "off";

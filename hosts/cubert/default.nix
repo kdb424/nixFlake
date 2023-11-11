@@ -7,7 +7,7 @@
   inherit (inputs) nixpkgs;
 in {
   imports = [
-    ../../common/darwin/common.nix
+    ../../common/darwin
   ];
 
   system.stateVersion = 4;

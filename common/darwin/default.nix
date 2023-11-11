@@ -1,31 +1,14 @@
-{
-  pkgs,
-  lib,
-  inputs,
-  outputs,
-  ...
+{ config, lib, pkgs, inputs, outputs, ...
+
 }: let
   inherit (inputs) nixpkgs;
 in {
   imports = [
-    # inputs.home-manager.darwinModules.home-manager
     ./packages.nix
     ./yabai.nix
     ./yabai-scripting-additions.nix
   ];
 
-  # home-manager.extraSpecialArgs = {inherit inputs outputs;};
-  # home-manager.useGlobalPkgs = true;
-  # home-manager.useUserPackages = true;
-
-  users.users.kdb424 = {
-    name = "kdb424";
-    home = "/Users/kdb424";
-    shell = pkgs.zsh;
-  };
-
-  # List packages installed in system profile. To search by name, run:
-  # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     vim
     home-manager
@@ -33,13 +16,20 @@ in {
     gimp
   ];
 
-  #security.pam.enableSudoTouchIdAuth = true;
+  home-manager.extraSpecialArgs = {inherit inputs outputs;};
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
 
-  environment.shells = builtins.attrValues {inherit (pkgs) bashInteractive zsh;};
+  users.users.kdb424 = {
+    name = "kdb424";
+    home = "/Users/kdb424";
+    shell = pkgs.zsh;
+  };
 
-  # Auto upgrade nix package and the daemon service.
+  programs.zsh.enable = true;
+
   services.nix-daemon.enable = true;
-  nix.package = pkgs.nix;
+
   nix.extraOptions =
     ''
       # Determinate systems options
@@ -68,5 +58,7 @@ in {
         };
       })
   ];
-  system.stateVersion = 4;
+
+  home-manager.users.kdb424 = import ../../home-manager/machines/cubert.nix;
+
 }

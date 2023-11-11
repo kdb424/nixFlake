@@ -97,7 +97,7 @@
 
     darwinConfigurations = {
       # M2 Mac mini
-      cubert = mkDarwin "aarch64-darwin" [./hosts/cubert];
+      cubert = mkDarwin "aarch64-darwin" [./hosts/cubert home-manager.darwinModules.home-manager];
     };
 
     homeConfigurations = {
