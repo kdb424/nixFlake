@@ -115,7 +115,10 @@ in {
       trypath ''${HOME}/.emacs.d/bin
       trypath ''${HOME}/.config/emacs/bin
       trypath ''${HOME}/src/klipper_estimator/target/release
-      trypath /nix/var/nix/profiles/default/bin # Darwin-Nix will not set this
+
+      # Darwin-Nix will not set this
+      trypath /nix/var/nix/profiles/default/bin
+      trypath /run/current-system/sw/bin
 
       # Dev tools to PATH
       trypath ''${HOME}/src/circuitpython/mpy-cross
