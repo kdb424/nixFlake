@@ -16,6 +16,12 @@
       "x86_64-darwin"
     ];
 
+    # Hyprland cache
+    nix.settingcs = {
+      substituters = ["https://hyprland.cachix.org"];
+      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+    };
+
     mkNixos = modules:
       nixpkgs.lib.nixosSystem {
         modules =
@@ -142,17 +148,20 @@
 
     hyprland = {
       url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # Don't follow nixpkgs or cache will miss
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
 
     emacs = {
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     nix-index-database = {
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
