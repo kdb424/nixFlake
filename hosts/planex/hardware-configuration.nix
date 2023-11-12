@@ -14,7 +14,8 @@
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
   #boot.kernelParams = ["rcu_nocbs=0-15" "idle=nomwait" "pci=nomsi" "processor.max_cstate=1"]; # Ryzen lockup patches
-  boot.kernelParams = ["rcu_nocbs=0-15" "processor.max_cstate=5"]; # Ryzen lockup patches"
+  # Boot patches no longer needed hopefully.
+  #boot.kernelParams = ["rcu_nocbs=0-15" "processor.max_cstate=5"]; # Ryzen lockup patches"
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/981b7c9a-6e90-4d2b-8693-dbed31ca8228";

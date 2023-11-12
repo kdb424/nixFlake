@@ -14,6 +14,7 @@
     ../../common/networking/zerotier.nix
     ../../common/editors/emacs.nix
     ../../common/nixos/docker.nix
+    ../../common/gui/hyprland.nix
   ];
 
   # Bootloader.
