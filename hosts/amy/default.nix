@@ -1,6 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 {
   config,
   lib,
@@ -13,8 +10,11 @@
     ./hardware-configuration.nix
     ../../common/nixos/common.nix
     ../../common/networking/zerotier.nix
-    ../../common/gui/hyprland.nix
     ../../common/editors/emacs.nix
+    ../../common/nixos/bluetooth.nix
+    ../../common/gui/steam.nix
+    ../../common/gui/hyprland.nix
+    ../../common/style/stylix.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -24,8 +24,8 @@
   networking.hostName = "amy"; # Define your hostname.
   networking.networkmanager.enable = true;
 
+  # Enable firmware updates
   services.fwupd.enable = true;
-  # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

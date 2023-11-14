@@ -128,18 +128,18 @@ in {
 
       # Sets term colors, and fixes problems with SSH for pywal/wpg
       # Always leave near the end. Disabled on Mac
-      if [[ "$OSTYPE" != "darwin"* ]]; then
-        if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-          SESSION_TYPE=remote/ssh
-        else
-          case $(ps -o comm= -p $PPID) in
-            sshd|*/sshd) SESSION_TYPE=remote/ssh;;
-          esac
-            # Only change term colors for local system
-            [[ -f ''${XDG_CONFIG_HOME}/wpg/sequences ]] && command cat ''${XDG_CONFIG_HOME}/wpg/sequences
-            [[ -f ''${HOME}/.cache/wal/sequences ]] && command cat ''${HOME}/.cache/wal/sequences
-        fi
-      fi
+      # if [[ "$OSTYPE" != "darwin"* ]]; then
+      #   if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+      #     SESSION_TYPE=remote/ssh
+      #   else
+      #     case $(ps -o comm= -p $PPID) in
+      #       sshd|*/sshd) SESSION_TYPE=remote/ssh;;
+      #     esac
+      #       # Only change term colors for local system
+      #       [[ -f ''${XDG_CONFIG_HOME}/wpg/sequences ]] && command cat ''${XDG_CONFIG_HOME}/wpg/sequences
+      #       [[ -f ''${HOME}/.cache/wal/sequences ]] && command cat ''${HOME}/.cache/wal/sequences
+      #   fi
+      # fi
 
       if [ "$OS_DETECTION" = "mac" ]; then
         trysource ''${HOME}/.iterm2_shell_integration.zsh
@@ -339,7 +339,7 @@ in {
 
       # ZSH Tmux plugin settings
       TMUX_MOTD=false
-      if [[ $(hostname) == "amy" ]] || [[ $(hostname) == "cubert" ]] ; then
+      if [[ $(hostname) == "amy" ]] || [[ $(hostname) == "cubert" ]] || [[ $(hostname) == "planex" ]] ; then
           # Disable autostart on local machines
           TMUX_AUTOSTART=false
       fi

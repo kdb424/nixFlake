@@ -56,7 +56,8 @@ in {
     }
     // optionalAttrs isLinux {
       bmon = "${pkgs.bandwhich}/bin/bandwhich";
-      scrot = "${pkgs.grim}/bin/grim 'desktop-$(date +\"%Y%m%d%H%M\").png'";
+      scrot = "${pkgs.grim}/bin/grim \"desktop-$(date +\"%Y%m%d%H%M\").png\"";
+      xclip = "tee >(wl-copy) | wl-copy -p";
     }
     // optionalAttrs isDarwin {
       xclip = "pbcopy";

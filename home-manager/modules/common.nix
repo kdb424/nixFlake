@@ -2,7 +2,7 @@
   config,
   lib,
   pkgs,
-  inputs,
+  nix-index-database,
   ...
 }: {
   imports = [
@@ -10,15 +10,11 @@
     ./tmux.nix
     ./vim.nix
     ./zsh
-    inputs.nix-index-database.hmModules.nix-index
   ];
   nixpkgs.config.allowUnfree = true;
 
-  # Enable nix-index
-  programs.nix-index-database.comma.enable = true;
-
-  # Enable shell integration
-  programs.nix-index.enable = true;
+  # modern cat
+  programs.bat.enable = true;
 
   home.packages = with pkgs;
     [
@@ -31,7 +27,6 @@
       # builtin replacements
       htop # modern top
       bottom # even more top
-      bat # modern cat
       colordiff # gimme my colours
       du-dust # modern du
       eza # modern ls
@@ -53,10 +48,6 @@
       hyperfine # benchmark
       neofetch # Check what system I'm on
       screen # multiplexer
-
-      # vcs
-      git
-      git-lfs
 
       # tui apps
       #ncdu_2
@@ -85,7 +76,6 @@
       nix-prefetch-github
       direnv
       nix-direnv
-      cachix
       alejandra # nix code formatter
     ]
     ++ lib.optionals stdenv.isDarwin [

@@ -6,22 +6,18 @@
   outputs,
   ...
 }: {
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-  };
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  hardware.bluetooth.enable = true;
-
-  programs.sway.enable = true;
+  environment.systemPackages = with pkgs; [
+    gnome.adwaita-icon-theme
+    gnome.gnome-themes-extra
+    firefox-wayland
+    discord
+    qt5.qtwayland
+    qt6.qmake
+    qt6.qtwayland
+    adwaita-qt
+    adwaita-qt6
+  ];
 }

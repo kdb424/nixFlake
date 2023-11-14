@@ -6,6 +6,7 @@
     nixpkgs,
     home-manager,
     nix-index-database,
+    stylix,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -28,12 +29,15 @@
           modules
           ++ [
             home-manager.nixosModules.home-manager
+            nix-index-database.nixosModules.nix-index
+            stylix.nixosModules.stylix
             {
-              home-manager.useGlobalPkgs = false;
+              home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+              home-manager.users.kdb424 = ./home-manager/machines/planex.nix;
             }
           ];
-        specialArgs = {inherit inputs outputs home-manager;};
+        specialArgs = {inherit inputs outputs;};
       };
 
     mkDarwin = system: modules:
@@ -94,7 +98,7 @@
       # Small intel server
       kif = mkNixos [./hosts/kif];
 
-      # Ryzen first gen
+      # Ryzen Fifth gen
       planex = mkNixos [./hosts/planex];
 
       # Ryzen Second gen
@@ -110,7 +114,6 @@
       "kdb424@amy" = mkHome [./home-manager/machines/amy.nix] nixpkgs.legacyPackages.x86_64-linux;
       "kdb424@cubert" = mkHome [./home-manager/machines/cubert.nix] nixpkgs.legacyPackages.aarch64-darwin;
       "kdb424@farnsworth" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.aarch64-linux;
-      "kdb424@planex" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.x86_64-linux;
       "kdb424@kif" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.x86_64-linux;
       "kdb424@zapp" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.x86_64-linux;
       "kdb424@morbo" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.x86_64-linux;
@@ -164,6 +167,11 @@
 
     nix-index-database = {
       url = "github:Mic92/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    stylix = {
+      url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

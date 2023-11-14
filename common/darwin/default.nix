@@ -1,5 +1,10 @@
-{ config, lib, pkgs, inputs, outputs, ...
-
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  outputs,
+  ...
 }: let
   inherit (inputs) nixpkgs;
 in {
@@ -60,5 +65,4 @@ in {
   ];
 
   home-manager.users.kdb424 = import ../../home-manager/machines/cubert.nix;
-
 }

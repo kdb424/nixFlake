@@ -19,6 +19,10 @@
   nix.settings.auto-optimise-store = true;
   nix.optimise.automatic = true;
 
+  # Disable so comma can be installed
+  programs.command-not-found.enable = false;
+  programs.nix-index-database.comma.enable = true;
+
   nix.gc = {
     automatic = true;
     dates = "weekly";

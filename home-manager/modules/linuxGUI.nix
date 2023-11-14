@@ -4,17 +4,14 @@
   pkgs,
   ...
 }: {
-  gtk = {
-    enable = true;
-    theme = {
-      name = "FlatColor";
-    };
-  };
+  # gtk = {
+  #   enable = true;
+  #   theme = {
+  #     name = "FlatColor";
+  #   };
+  # };
   home.packages = with pkgs; [
     firefox
-    wpgtk
-    lxappearance
-    discord
     betterdiscordctl
     gimp
     gparted
