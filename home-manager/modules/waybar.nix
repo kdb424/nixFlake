@@ -15,10 +15,7 @@
       modules-center = ["hyprland/window"];
       modules-right = ["network" "pulseaudio" "cpu" "custom/cpu_freq" "temperature" "memory" "battery" "tray" "clock"];
 
-      "hyprland/workspaces" = {
-        disable-scroll = false;
-        all-outputs = false;
-      };
+      "hyprland/workspaces".sort-by-number = true;
 
       "tray"."spacing" = 2;
 
@@ -27,16 +24,17 @@
       };
 
       "clock" = {
-        format = "{:%a %B %d %D:%M}";
+        # format = "{:%a %B %d %D:%M}";
+        format = " {:%a %b %d %R}";
       };
 
       "cpu" = {
         "interval" = 2;
-        "format" = "{usage}% ";
+        "format" = "{usage}%  ";
       };
 
       "custom/cpu_freq" = {
-        format = "{}MHz";
+        format = "{}MHz ";
         interval = 5;
         exec =
           pkgs.writeShellScript "cpuFreq"
@@ -52,12 +50,12 @@
           "warning" = 30;
           "critical" = 15;
         };
-        "format" = "{capacity}% {icon}";
+        "format" = "{capacity}% {icon} ";
         "format-full" = "";
         "format-icons" = ["" "" "" "" ""];
       };
 
-      "memory"."format" = "{used:0.1f}G/{total:0.1f}G ";
+      "memory"."format" = "{used:0.1f}G/{total:0.1f}G  ";
 
       "network" = {
         "interface" = "enp2s0f0";
@@ -70,8 +68,8 @@
       };
 
       "pulseaudio" = {
-        "format" = "{volume}% {icon}";
-        "format-bluetooth" = "{volume}% {icon}";
+        "format" = "{volume}% {icon} ";
+        "format-bluetooth" = "{volume}% {icon} ";
         "format-muted" = "";
         "format-icons" = {
           "headphones" = "";
