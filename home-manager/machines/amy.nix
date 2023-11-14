@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   # Home Manager needs a bit of information about you and the
@@ -24,9 +25,11 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
   imports = [
     ../modules/common.nix
     ../modules/commonGUI.nix
     ../modules/linuxGUI.nix
+    ../modules/hyprland.nix
   ];
 }

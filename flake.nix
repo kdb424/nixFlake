@@ -34,7 +34,6 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.kdb424 = ./home-manager/machines/planex.nix;
             }
           ];
         specialArgs = {inherit inputs outputs;};
@@ -93,16 +92,29 @@
       farnsworth = mkNixos [./hosts/farnsworth];
 
       # Laptop
-      amy = mkNixos [./hosts/amy];
+      amy = mkNixos [
+        ./hosts/amy
+        {home-manager.users.kdb424 = ./home-manager/machines/amy.nix;}
+      ];
 
       # Small intel server
-      kif = mkNixos [./hosts/kif];
+      kif = mkNixos [
+        ./hosts/kif
+        {home-manager.users.kdb424 = ./home-manager/machines/headless.nix;}
+      ];
 
       # Ryzen Fifth gen
-      planex = mkNixos [./hosts/planex];
+      planex = mkNixos [
+        ./hosts/planex
+        {home-manager.users.kdb424 = ./home-manager/machines/planex.nix;}
+      ];
+
 
       # Ryzen Second gen
-      morbo = mkNixos [./hosts/morbo];
+      morbo = mkNixos [
+        ./hosts/morbo
+        {home-manager.users.kdb424 = ./home-manager/machines/headless.nix;}
+      ];
     };
 
     darwinConfigurations = {
@@ -111,12 +123,9 @@
     };
 
     homeConfigurations = {
-      "kdb424@amy" = mkHome [./home-manager/machines/amy.nix] nixpkgs.legacyPackages.x86_64-linux;
       "kdb424@cubert" = mkHome [./home-manager/machines/cubert.nix] nixpkgs.legacyPackages.aarch64-darwin;
       "kdb424@farnsworth" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.aarch64-linux;
-      "kdb424@kif" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.x86_64-linux;
       "kdb424@zapp" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.x86_64-linux;
-      "kdb424@morbo" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.x86_64-linux;
     };
   };
 
