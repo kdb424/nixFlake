@@ -5,7 +5,10 @@
   inputs,
   outputs,
   ...
-}: {
+}: let
+    discord = pkgs.discord.override {withOpenASAR = true;};
+    in
+{
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
