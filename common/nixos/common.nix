@@ -10,6 +10,7 @@
     ./packages.nix
     ./users.nix
     ./locale.nix
+    ../../common/style/stylix.nix
   ];
   #
   nixpkgs.config.allowUnfree = true;
