@@ -167,12 +167,6 @@
       # inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hy3 = {
-      url = "github:outfoxxed/hy3";
-      # or "github:outfoxxed/hy3?ref=hl{version}" for a release version of hyprland
-      inputs.hyprland.follows = "hyprland";
-    };
-
     emacs = {
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";

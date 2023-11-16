@@ -7,7 +7,6 @@
 }: {
   imports = [
     ./waybar.nix
-    ./hy3.nix
   ];
 
   services.mako = {
