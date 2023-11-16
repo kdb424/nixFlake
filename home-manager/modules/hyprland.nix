@@ -7,6 +7,7 @@
 }: {
   imports = [
     ./waybar.nix
+    ./hy3.nix
   ];
 
   services.mako = {
@@ -15,10 +16,12 @@
   };
 
   wayland.windowManager.hyprland.enable = true;
+
   wayland.windowManager.hyprland.extraConfig = ''
     monitor=,preferred,auto,1
     exec = ${pkgs.swaybg}/bin/swaybg -i ${config.stylix.image} -m fill
   '';
+
   wayland.windowManager.hyprland.settings = {
     input = {
       sensitivity = 0.4;
@@ -36,7 +39,7 @@
       gaps_out = 20;
       resize_on_border = true;
 
-      layout = "dwindle";
+      #layout = "dwindle";
     };
 
     dwindle = {

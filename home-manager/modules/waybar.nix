@@ -84,8 +84,8 @@
       };
       "temperature" = {
         "hwmon-path" = "/sys/class/hwmon/hwmon2/temp1_input";
-          "format" = "{}°C";
-          "critical-threshold" = 80;
+        "format" = "{}°C";
+        "critical-threshold" = 80;
       };
     };
   };

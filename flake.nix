@@ -34,6 +34,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = {inherit inputs outputs;};
             }
           ];
         specialArgs = {inherit inputs outputs;};
@@ -164,6 +165,12 @@
       url = "github:hyprwm/Hyprland";
       # Don't follow nixpkgs or cache will miss
       # inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    hy3 = {
+      url = "github:outfoxxed/hy3";
+      # or "github:outfoxxed/hy3?ref=hl{version}" for a release version of hyprland
+      inputs.hyprland.follows = "hyprland";
     };
 
     emacs = {

@@ -1,8 +1,11 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   boot.initrd.kernelModules = ["amdgpu"];
-  boot.extraModulePackages = with config.boot.kernelPackages; [ zenpower ] ;
+  boot.extraModulePackages = with config.boot.kernelPackages; [zenpower];
 
   # amdgpu opencl
   hardware.opengl.extraPackages = with pkgs; [
@@ -16,6 +19,5 @@
     driversi686Linux.amdvlk
   ];
 
-  environment.systemPackages = with pkgs; [ radeontop zenmonitor ];
-
+  environment.systemPackages = with pkgs; [radeontop zenmonitor];
 }
