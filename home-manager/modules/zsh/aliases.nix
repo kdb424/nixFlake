@@ -53,6 +53,7 @@ in {
       emacsnw = "emacs -nw";
       install-doom = "git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d && ~/.emacs.d/bin/doom install";
       fhinit = "nix run \"https://flakehub.com/f/DeterminateSystems/fh/*.tar.gz\" -- init";
+      sensors-where = "for m in /sys/class/hwmon/* ; do echo -n “$m = ” ; cat $m/name ; done";
     }
     // optionalAttrs isLinux {
       bmon = "${pkgs.bandwhich}/bin/bandwhich";

@@ -59,12 +59,12 @@
 
       "network" = {
         "interface" = "enp2s0f0";
-              "interval" = 2;
-              "format-ethernet" = "Up: {bandwidthUpBits} Down: {bandwidthDownBits}  ";
-              "tooltip-format-ethernet" = "{ifname}  ";
-              "format-wifi" = "Up: {bandwidthUpBits} Down: {bandwidthDownBits} {essid} ({signalStrength}%)  ";
-              "tooltip-format-wifi" = "{ifname} {essid} ({signalStrength}%) ";
-              "format-disconnected" = "Disconnected ⚠";
+        "interval" = 2;
+        "format-ethernet" = "Up: {bandwidthUpBits} Down: {bandwidthDownBits}  ";
+        "tooltip-format-ethernet" = "{ifname}  ";
+        "format-wifi" = "Up: {bandwidthUpBits} Down: {bandwidthDownBits} {essid} ({signalStrength}%)  ";
+        "tooltip-format-wifi" = "{ifname} {essid} ({signalStrength}%) ";
+        "format-disconnected" = "Disconnected ⚠";
       };
 
       "pulseaudio" = {
@@ -81,6 +81,11 @@
           "default" = ["" ""];
         };
         "on-click" = "pavucontrol";
+      };
+      "temperature" = {
+        "hwmon-path" = "/sys/class/hwmon/hwmon2/temp1_input";
+          "format" = "{}°C";
+          "critical-threshold" = 80;
       };
     };
   };

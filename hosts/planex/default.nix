@@ -18,6 +18,7 @@
     ../../common/gui/steam.nix
     ../../common/gui/hyprland.nix
     ../../common/style/stylix.nix
+    ../../common/hardware/amdgpu.nix
   ];
 
   # Bootloader.

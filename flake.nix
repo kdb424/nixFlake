@@ -109,7 +109,6 @@
         {home-manager.users.kdb424 = ./home-manager/machines/planex.nix;}
       ];
 
-
       # Ryzen Second gen
       morbo = mkNixos [
         ./hosts/morbo
@@ -119,7 +118,10 @@
 
     darwinConfigurations = {
       # M2 Mac mini
-      cubert = mkDarwin "aarch64-darwin" [./hosts/cubert home-manager.darwinModules.home-manager];
+      cubert = mkDarwin "aarch64-darwin" [
+        ./hosts/cubert
+        home-manager.darwinModules.home-manager
+      ];
     };
 
     homeConfigurations = {

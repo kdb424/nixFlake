@@ -6,9 +6,13 @@
   outputs,
   ...
 }: let
-    discord = pkgs.discord.override {withOpenASAR = true;};
-    in
-{
+  discord = pkgs.discord.override {
+    # Performance mod
+    withOpenASAR = true;
+    # link fix
+    nss = pkgs.nss_latest;
+  };
+in {
   # Enable CUPS to print documents.
   services.printing.enable = true;
 

@@ -1,7 +1,9 @@
-{ config, lib, pkgs, ... }:
-
 {
-
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;

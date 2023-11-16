@@ -34,6 +34,7 @@
     general = {
       gaps_in = 5;
       gaps_out = 20;
+      resize_on_border = true;
 
       layout = "dwindle";
     };

@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   # XDG Portals
   xdg = {
     autostart.enable = true;
@@ -20,5 +23,4 @@
   environment.sessionVariables = {
     XDG_SESSION_TYPE = "wayland";
   };
-
 }

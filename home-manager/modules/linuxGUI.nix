@@ -11,7 +11,6 @@
   #   };
   # };
   home.packages = with pkgs; [
-    firefox
     betterdiscordctl
     gimp
     gparted

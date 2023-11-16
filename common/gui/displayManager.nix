@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   services.xserver = {
     displayManager.gdm = {
       enable = false;
@@ -8,4 +11,7 @@
     };
     displayManager.lightdm.enable = false;
   };
+  environment.systemPackages = with pkgs; [
+    lemurs
+  ];
 }
