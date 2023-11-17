@@ -38,9 +38,13 @@
       gaps_out = 20;
       resize_on_border = true;
 
-      #layout = "dwindle";
+      layout = "master";
     };
 
+    master = {
+      new_is_master = false;
+      smart_resizing = false;
+    };
     dwindle = {
       force_split = 2;
       preserve_split = true;
