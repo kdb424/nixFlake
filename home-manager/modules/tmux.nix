@@ -59,11 +59,4 @@
       set -s escape-time 0
     '';
   };
-
-  programs.tmate = {
-    enable = true;
-    extraConfig = ''
-      source-file ~/.config/tmux/tmux.conf
-    '';
-  };
 }
