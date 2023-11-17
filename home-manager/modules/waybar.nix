@@ -52,7 +52,12 @@ in {
         exec =
           pkgs.writeShellScript "cpuFreq"
           ''
-            cat /proc/cpuinfo| grep MHz | cut -c 12-15 | tr '\n' ' ' | awk '{s+=$1}END{print "",s/NR}' RS=" " | cut -c 2-5
+            ${pkgs.busybox}/bin/cat /proc/cpuinfo | \
+            ${pkgs.busybox}/bin/grep MHz | \
+            ${pkgs.busybox}/bin/cut -c 12-15 | \
+            ${pkgs.busybox}/bin/tr '\n' ' ' | \
+            ${pkgs.busybox}/bin/awk '{s+=$1}END{print "",s/NR}' RS=" " | \
+            ${pkgs.busybox}/bin/cut -c 2-5
           '';
       };
 
