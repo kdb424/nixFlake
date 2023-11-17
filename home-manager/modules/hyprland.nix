@@ -19,11 +19,7 @@
   wayland.windowManager.hyprland.extraConfig = ''
     monitor=,preferred,auto,1
     exec = ${pkgs.swaybg}/bin/swaybg -i ${config.stylix.image} -m fill
-    exec-once = ${pkgs.swayidle}/bin/swayidle -w \
-      timeout 10 'if pgrep ${pkgs.swaylock-effects}/bin/swaylock; \
-      then hyprctl dispatch dpms off; fi' \
-      resume 'hyprctl dispatch dpms on' \
-      before-sleep '${pkgs.swaylock-effects}/bin/swaylock -f'
+    exec-once = sleep 10 && ${pkgs.swayidle}/bin/swayidle -w timeout 10 'if ${pkgs.busybox}/bin/pgrep ${pkgs.swaylock-effects}/bin/swaylock; then hyprctl dispatch dpms off; fi' resume 'hyprctl dispatch dpms on' before-sleep '${pkgs.swaylock-effects}/bin/swaylock -f'
   '';
 
   wayland.windowManager.hyprland.settings = {
