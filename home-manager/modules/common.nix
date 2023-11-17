@@ -10,6 +10,7 @@
     ./tmux.nix
     ./vim.nix
     ./zsh
+    ../../modules/home-manager
   ];
   nixpkgs.config.allowUnfree = true;
 

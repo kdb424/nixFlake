@@ -4,13 +4,8 @@
   pkgs,
   ...
 }: {
-  # gtk = {
-  #   enable = true;
-  #   theme = {
-  #     name = "FlatColor";
-  #   };
-  # };
   home.packages = with pkgs; [
+    thunderbird
     betterdiscordctl
     gimp
     gparted
@@ -19,4 +14,9 @@
     schildichat-desktop-wayland
     sublime-music
   ];
+
+  services.protonmail-bridge = {
+    enable = true;
+    nonInteractive = true;
+  };
 }
