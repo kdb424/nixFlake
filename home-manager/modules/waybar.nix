@@ -2,8 +2,22 @@
   config,
   lib,
   pkgs,
+  osConfig,
   ...
-}: {
+}: let
+  networkInterface.eth =
+    if osConfig.networking.hostName == "planex"
+    then "enp2s0f0"
+    else if osConfig.networking.hostName == "amy"
+    then "wlp2s0"
+    else "";
+  hwmon =
+    if osConfig.networking.hostName == "planex"
+    then "/sys/class/hwmon/hwmon2/temp1_input"
+    else if osConfig.networking.hostName == "amy"
+    then "/sys/class/hwmon/hwmon4/temp1_input"
+    else "";
+in {
   programs.waybar.enable = true;
 
   programs.waybar.settings = {
@@ -24,7 +38,6 @@
       };
 
       "clock" = {
-        # format = "{:%a %B %d %D:%M}";
         format = " {:%a %b %d %R}";
       };
 
@@ -58,7 +71,7 @@
       "memory"."format" = "{used:0.1f}G/{total:0.1f}G  ";
 
       "network" = {
-        "interface" = "enp2s0f0";
+        "interface" = "${networkInterface.eth}";
         "interval" = 2;
         "format-ethernet" = "Up: {bandwidthUpBits} Down: {bandwidthDownBits}  ";
         "tooltip-format-ethernet" = "{ifname}  ";
