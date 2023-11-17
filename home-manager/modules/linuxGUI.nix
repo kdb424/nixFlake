@@ -4,12 +4,15 @@
   pkgs,
   ...
 }: {
-  # gtk = {
-  #   enable = true;
-  #   theme = {
-  #     name = "FlatColor";
-  #   };
-  # };
+  imports = [
+    ./discord
+  ];
+
+  programs.discord = {
+    enable = true;
+    wrapDiscord = true;
+  };
+
   home.packages = with pkgs; [
     betterdiscordctl
     gimp
@@ -18,5 +21,6 @@
     pavucontrol
     schildichat-desktop-wayland
     sublime-music
+    thunderbird
   ];
 }
