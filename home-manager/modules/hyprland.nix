@@ -20,6 +20,9 @@
     monitor=,preferred,auto,1
     exec = ${pkgs.swaybg}/bin/swaybg -i ${config.stylix.image} -m fill
     exec-once = sleep 10 && ${pkgs.swayidle}/bin/swayidle -w timeout 10 'if ${pkgs.busybox}/bin/pgrep ${pkgs.swaylock-effects}/bin/swaylock; then hyprctl dispatch dpms off; fi' resume 'hyprctl dispatch dpms on' before-sleep '${pkgs.swaylock-effects}/bin/swaylock -f'
+    # Enables clipboard sync
+    exec-once = ${pkgs.wl-clipboard}/bin/wl-paste -p | ${pkgs.wl-clipboard}/bin/wl-copy
+    exec-once = ${pkgs.wl-clipboard}/bin/wl-paste | ${pkgs.wl-clipboard}/bin/wl-copy -p
   '';
 
   wayland.windowManager.hyprland.settings = {
@@ -43,7 +46,7 @@
 
     general = {
       gaps_in = 5;
-      gaps_out = 20;
+      gaps_out = 16;
       resize_on_border = true;
 
       layout = "master";
