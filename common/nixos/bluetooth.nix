@@ -9,4 +9,6 @@
     enable = true;
     powerOnBoot = true;
   };
+
+  services.upower = { enable = true; };
 }

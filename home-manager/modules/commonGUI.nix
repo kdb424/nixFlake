@@ -10,6 +10,9 @@
 
   fonts.fontconfig.enable = true;
 
+  # Bluetooth power alerts
+  services.poweralertd.enable = true;
+
   home.packages = with pkgs; [
     # fonts
     rPackages.fontawesome
