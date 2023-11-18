@@ -34,6 +34,12 @@
       };
     };
 
+    # Amy internal keyboard settings
+    device.at-translated-set-2-keyboard = {
+      kb_layout = us:dvorak;
+      kb_options = ctrl:nocaps;
+    };
+
     general = {
       gaps_in = 5;
       gaps_out = 20;
@@ -51,7 +57,22 @@
       preserve_split = true;
     };
 
-    animations.enabled = false;
+    animations = {
+      enabled = true;
+      bezier = [
+        "myBezier, 0.22, 1, 0.36, 1"
+        "snap, 0, 1, 0, 1"
+        ];
+
+      animation = [
+        "windows, 1, 0.5, myBezier"
+        "windowsOut, 1, 0.5, snap, popin 80%"
+        "border, 1, 0.5, snap"
+        "borderangle, 1, 0.5, snap"
+        "fade, 1, 0.001, myBezier"
+        "workspaces, 1, 0.8, myBezier, fade"
+      ];
+    };
     xwayland.force_zero_scaling = true;
 
     # https://wiki.hyprland.org/Configuring/Variables/#gestures
