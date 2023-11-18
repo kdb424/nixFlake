@@ -14,6 +14,7 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+    autocd = true;
 
     initExtraBeforeCompInit = ''
       fpath+=(${config.home.profileDirectory}/share/zsh/site-functions)

@@ -1,10 +1,13 @@
-{ config, pkgs, lib, ... }:
-
-let
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
   cfg = config.programs.discord;
 
   discordPatcherBin = pkgs.writers.writePython3Bin "discord-krisp-patcher" {
-    libraries = with pkgs.python3Packages; [ pyelftools capstone ];
+    libraries = with pkgs.python3Packages; [pyelftools capstone];
     flakeIgnore = [
       "E265" # from nix-shell shebang
       "E501" # line too long (82 > 79 characters)
@@ -31,11 +34,13 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ discordPatcherBin ]
-                    ++ (if cfg.wrapDiscord
-                        then [ wrapDiscordBinary ]
-                        else [ pkgs.discord ]
-                    );
+    home.packages =
+      [discordPatcherBin]
+      ++ (
+        if cfg.wrapDiscord
+        then [wrapDiscordBinary]
+        else [pkgs.discord]
+      );
 
     # consideered adding a service here, that would patch discord using
     # a systemd service, but instead just opted to patch each time Discord starts
