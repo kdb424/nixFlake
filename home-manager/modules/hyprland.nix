@@ -35,7 +35,7 @@
     };
 
     # Amy internal keyboard settings
-    device.at-translated-set-2-keyboard = {
+    device."\"3164e80:at-translated-set-2-keyboard\"" = {
       kb_layout = us:dvorak;
       kb_options = ctrl:nocaps;
     };
