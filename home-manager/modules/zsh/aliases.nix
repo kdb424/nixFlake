@@ -1,5 +1,4 @@
 {
-  config,
   lib,
   pkgs,
   ...
@@ -23,7 +22,7 @@ in {
       mkdir = "mkdir -pv";
       df = "df -h";
       dd = "dd status=progress bs=4M conv=fdatasync ";
-      sudo = "sudo env \"PATH=$PATH\""; # Makes sudo work with aliases and saves path
+      sudo = "sudo env \"PATH=$PATH\" "; # Makes sudo work with aliases and saves path
       sd = "cd $(find . -type d -print | ${pkgs.fzf}/bin/fzf)";
       # Git remote manipulation and pushing multiple remotes
       grf = "git remote set-url origin ssh://git@morbo.far:222/$(whoami)/$(basename $(pwd))";
@@ -45,7 +44,7 @@ in {
       # Misc alieses I use often
       rmd = "rm -rf";
       mine = "sudo chown -R $(whoami):users";
-      nmap-qsp = "sudo ${pkgs.nmap}/bin/nmap -sV -T4 -O -F --version-light";
+      nmapqsp = "sudo ${pkgs.nmap}/bin/nmap -sV -T4 -O -F --version-light";
       benchmark = "${pkgs.hyperfine}/bin/hyperfine --warmup 3 ";
 
       # Other
@@ -56,9 +55,8 @@ in {
       sensors-where = "for m in /sys/class/hwmon/* ; do echo -n “$m = ” ; cat $m/name ; done";
     }
     // optionalAttrs isLinux {
-      bmon = "${pkgs.bandwhich}/bin/bandwhich";
       scrot = "${pkgs.grim}/bin/grim \"desktop-$(date +\"%Y%m%d%H%M\").png\"";
-      xclip = "tee >(wl-copy) | wl-copy -p";
+      xclip = "tee >(${pkgs.wl-clipboard}/bin/wl-copy) | ${pkgs.wl-clipboard}/bin/wl-copy -p";
     }
     // optionalAttrs isDarwin {
       xclip = "pbcopy";

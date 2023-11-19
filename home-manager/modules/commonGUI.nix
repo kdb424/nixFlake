@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./alacritty
   ];
@@ -19,7 +14,6 @@
     nerdfonts
     ubuntu_font_family
     noto-fonts-cjk-sans
-    pywal
     yt-dlp
   ];
 }

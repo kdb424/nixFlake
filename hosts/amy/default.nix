@@ -1,20 +1,13 @@
-{
-  config,
-  lib,
-  pkgs,
-  inputs,
-  outputs,
-  ...
-}: {
+{...}: {
   imports = [
     ./hardware-configuration.nix
     ../../common/nixos/common.nix
     ../../common/networking/zerotier.nix
     ../../common/editors/emacs.nix
-    ../../common/nixos/bluetooth.nix
     ../../common/gui/steam.nix
     ../../common/gui/hyprland.nix
     ../../common/style/stylix.nix
+    ../../common/nixos/laptop.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -29,7 +22,4 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
-  # use TLP for power management
-  services.tlp.enable = true;
 }

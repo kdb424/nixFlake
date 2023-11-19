@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./discord
   ];
@@ -22,5 +17,6 @@
     schildichat-desktop-wayland
     sublime-music
     thunderbird
+    kicad
   ];
 }

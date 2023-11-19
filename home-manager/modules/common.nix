@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  nix-index-database,
   ...
 }: {
   imports = [
@@ -22,7 +21,7 @@
       # zsh # Mac includes x86_64. Nix is always native
 
       # dotfiles
-      yadm
+      # yadm
 
       # builtin replacements
       htop # modern top
@@ -90,6 +89,7 @@
       ispell # doom emacs
       iotop # disk top
       iftop # network top
-      bandwhich # bandwidth utility
+      bmon # bandwidth monitor
+      bandwhich # bandwidth per process monitor
     ];
 }

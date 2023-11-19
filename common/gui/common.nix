@@ -1,18 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  inputs,
-  outputs,
-  ...
-}: let
-  # discord = pkgs.discord.override {
-  #   # Performance mod
-  #   withOpenASAR = true;
-  #   # link fix
-  #   nss = pkgs.nss_latest;
-  # };
-in {
+{pkgs, ...}: {
   services.printing.enable = true;
 
   environment.systemPackages = with pkgs; [

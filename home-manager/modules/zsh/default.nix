@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{config, ...}: {
   imports = [
     ./zshrc.nix
     ./aliases.nix

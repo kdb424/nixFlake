@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   stylix = {
     image = pkgs.fetchurl {
       url = "https://git.kdb424.xyz/kdb424/wallpapers/raw/branch/main/wallhaven-7p3we9.png";

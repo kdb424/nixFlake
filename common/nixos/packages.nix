@@ -21,7 +21,6 @@
     vim
     wget
     home-manager
-    yadm
     git
   ];
 }

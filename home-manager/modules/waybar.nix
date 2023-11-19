@@ -1,6 +1,4 @@
 {
-  config,
-  lib,
   pkgs,
   osConfig,
   ...
@@ -26,7 +24,7 @@ in {
       position = "top";
       height = 24;
       modules-left = ["hyprland/workspaces" "sway/mode" "wlr/taskbar"];
-      modules-center = ["hyprland/window"];
+      modules-center = ["hyprland/window" "gamemode"];
       modules-right = ["network" "pulseaudio" "cpu" "custom/cpu_freq" "temperature" "memory" "battery" "tray" "clock"];
 
       "hyprland/workspaces".sort-by-number = true;
@@ -104,6 +102,18 @@ in {
         "hwmon-path" = "/sys/class/hwmon/hwmon2/temp1_input";
         "format" = "{}°C";
         "critical-threshold" = 80;
+      };
+      "gamemode" = {
+        "format" = "{glyph}";
+        "format-alt" = "{glyph} {count}";
+        "glyph" = "";
+        "hide-not-running" = true;
+        "use-icon" = true;
+        "icon-name" = "input-gaming-symbolic";
+        "icon-spacing" = 4;
+        "icon-size" = 20;
+        "tooltip" = true;
+        "tooltip-format" = "Games running: {count}";
       };
     };
   };

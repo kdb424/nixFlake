@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{...}: {
   programs.zsh.profileExtra = ''
     if [[ $EUID != 0 ]]; then
         typeset -xT SUDO_PATH sudo_path

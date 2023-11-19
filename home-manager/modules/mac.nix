@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./alacritty/mac.nix
   ];
@@ -12,5 +7,6 @@
     curl
     nodePackages.pnpm # betterdiscord
     unrar
+    pywal
   ];
 }
