@@ -32,4 +32,12 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  # Logitech G502 stuff
+  # services.hardware.openrgb.enable = true;
+  # services.ratbagd.enable = true;
+  # environment.systemPackages = with pkgs; [
+  #   openrgb-with-all-plugins
+  #   piper
+  # ];
 }
