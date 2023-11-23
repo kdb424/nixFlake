@@ -48,6 +48,7 @@
       neofetch # Check what system I'm on
       screen # multiplexer
       unzip # sometimes 7z ain't gonna cut it
+      killall # rip processes
 
       # tui apps
       #ncdu_2

@@ -21,6 +21,12 @@
   nix.optimise.automatic = true;
   nix.settings.keep-derivations = false; # saves space. Turn off for easier debugging
 
+  nix.settings.trusted-users = [
+    "root"
+    "kdb424"
+    "@wheel"
+  ];
+
   # Disable so comma can be installed
   programs.command-not-found.enable = false;
   programs.nix-index-database.comma.enable = true;
