@@ -49,7 +49,7 @@ in {
 
       # Other
       zsnaplatest = "zfs list -t snapshot -H -S creation -o name -d 1";
-      emacsnw = "emacs -nw";
+      emacsnw = "emacsclient -nw -c";
       install-doom = "git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d && ~/.emacs.d/bin/doom install";
       fhinit = "nix run \"https://flakehub.com/f/DeterminateSystems/fh/*.tar.gz\" -- init";
       sensors-where = "for m in /sys/class/hwmon/* ; do echo -n “$m = ” ; cat $m/name ; done";

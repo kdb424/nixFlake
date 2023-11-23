@@ -22,5 +22,6 @@
     wget
     home-manager
     git
+    nix-tree
   ];
 }

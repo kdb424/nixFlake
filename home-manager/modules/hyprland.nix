@@ -13,6 +13,7 @@
   };
 
   wayland.windowManager.hyprland.enable = true;
+  programs.fuzzel.enable = true;
 
   wayland.windowManager.hyprland.settings = {
     xwayland.force_zero_scaling = true;

@@ -7,8 +7,18 @@
     autoEnable = true;
 
     polarity = "dark";
-    opacity.terminal = 0.65;
-    fonts.sizes.terminal = 10;
+    opacity = {
+      applications = 1.0;
+      desktop = 1.0;
+      popups = 0.8;
+      terminal = 0.65;
+    };
+    fonts.sizes = {
+      applications = 10;
+      desktop = 10;
+      popups = 14;
+      terminal = 10;
+    };
 
     fonts = {
       serif = {

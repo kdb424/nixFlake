@@ -19,6 +19,7 @@
 
   nix.settings.auto-optimise-store = true;
   nix.optimise.automatic = true;
+  nix.settings.keep-derivations = false; # saves space. Turn off for easier debugging
 
   # Disable so comma can be installed
   programs.command-not-found.enable = false;
