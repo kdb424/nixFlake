@@ -79,6 +79,7 @@
   environment.systemPackages = with pkgs; [
     libva-utils
     gsettings-desktop-schemas
+    udiskie
   ];
   environment.sessionVariables = {
     XDG_CURRENT_DESKTOP = "Hyprland";

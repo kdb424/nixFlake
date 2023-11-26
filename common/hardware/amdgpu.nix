@@ -19,5 +19,13 @@
     driversi686Linux.amdvlk
   ];
 
-  environment.systemPackages = with pkgs; [radeontop zenmonitor];
+  environment.systemPackages = with pkgs; [
+    radeontop
+    zenmonitor
+  ];
+
+  programs.corectrl = {
+    enable = true;
+    gpuOverclock.enable = true;
+  };
 }

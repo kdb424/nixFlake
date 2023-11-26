@@ -17,6 +17,9 @@ in {
       setopt NUMERIC_GLOB_SORT
       setopt EXTENDED_GLOB
 
+      # Prevents globbing for # as building .#flake causes issues without quotes
+      disable -p '#'
+
       # Turn on command substitution in the prompt (and parameter expansion and arithmetic expansion).
       setopt promptsubst
 

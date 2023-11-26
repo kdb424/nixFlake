@@ -4,10 +4,10 @@
     ../../common/nixos/common.nix
     ../../common/networking/zerotier.nix
     ../../common/editors/emacs.nix
-    ../../common/gui/steam.nix
+    ../../common/gui/games.nix
     ../../common/gui/hyprland.nix
     ../../common/style/stylix.nix
-    ../../common/nixos/laptop.nix
+    ../../common/hardware/laptop.nix
   ];
 
   # Use the systemd-boot EFI boot loader.

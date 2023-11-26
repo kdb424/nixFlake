@@ -8,12 +8,10 @@
   programs.steam = {
     enable = true;
     package = pkgs.steam.override {
-      extraPkgs = pkgs: with pkgs; [
-        gamescope
-      ];
+      extraPkgs = pkgs:
+        with pkgs; [
+          gamescope
+        ];
     };
   };
-
-  # https://nixos.wiki/wiki/Gamemode
-  programs.gamemode.enable = true;
 }
