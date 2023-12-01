@@ -15,6 +15,17 @@
   # modern cat
   programs.bat.enable = true;
 
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
+  };
+
+  services.lorri = {
+    enable = true;
+    enableNotifications = true;
+  };
+
   home.packages = with pkgs;
     [
       # Make sure ZSH is installed
@@ -75,8 +86,6 @@
 
       # nix tools
       nix-prefetch-github
-      direnv
-      nix-direnv
       alejandra # nix code formatter
     ]
     ++ lib.optionals stdenv.isDarwin [

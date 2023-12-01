@@ -5,7 +5,7 @@
 
   programs.discord = {
     enable = true;
-    wrapDiscord = true;
+    wrapDiscord = false;
   };
 
   programs.mangohud.enable = true;

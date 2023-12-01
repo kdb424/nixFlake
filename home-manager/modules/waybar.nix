@@ -1,5 +1,7 @@
 {
+  config,
   pkgs,
+  stylix,
   osConfig,
   ...
 }: let
@@ -15,25 +17,37 @@
     else if osConfig.networking.hostName == "amy"
     then "/sys/class/hwmon/hwmon4/temp1_input"
     else "";
+
 in {
   programs.waybar.enable = true;
 
   programs.waybar.settings = {
     mainBar = {
-      layer = "bottom";
+      layer = "top";
       position = "top";
       height = 24;
-      modules-left = ["hyprland/workspaces" "sway/mode" "wlr/taskbar"];
+      modules-left = ["hyprland/workspaces" "wlr/taskbar"];
       modules-center = ["hyprland/window" "gamemode"];
-      modules-right = ["network" "pulseaudio" "cpu" "custom/cpu_freq" "temperature" "memory" "battery" "tray" "clock"];
+      modules-right = ["network" "pulseaudio" "disk" "cpu" "temperature" "memory" "battery" "tray" "clock"];
 
-      "hyprland/workspaces".sort-by-number = true;
+      "hyprland/workspaces" = {
+        sort-by-number = true;
+        on-click = "activate";
+        format = "{icon}";
+        persistent-workspaces = {
+          "1" = "[]";
+          "2" = "[]";
+          "3" = "[]";
+          "4" = "[]";
+        };
+        format-icons = {
+          "urgent" = "";
+          "active" = "";
+          "default" = "";
+        };
+      };
 
       "tray"."spacing" = 2;
-
-      "sway/mode" = {
-        format = "<span style=\"italic\">{}</span>";
-      };
 
       "clock" = {
         format = " {:%a %b %d %R}";
@@ -41,22 +55,8 @@ in {
 
       "cpu" = {
         "interval" = 2;
-        "format" = "{usage}%  ";
-      };
-
-      "custom/cpu_freq" = {
-        format = "{}MHz ";
-        interval = 5;
-        exec =
-          pkgs.writeShellScript "cpuFreq"
-          ''
-            ${pkgs.busybox}/bin/cat /proc/cpuinfo | \
-            ${pkgs.busybox}/bin/grep MHz | \
-            ${pkgs.busybox}/bin/cut -c 12-15 | \
-            ${pkgs.busybox}/bin/tr '\n' ' ' | \
-            ${pkgs.busybox}/bin/awk '{s+=$1}END{print "",s/NR}' RS=" " | \
-            ${pkgs.busybox}/bin/cut -c 2-5
-          '';
+        "format" = "{usage}%  {avg_frequency}GHz";
+        "on-click" = "${pkgs.alacritty}/bin/alacritty -e ${pkgs.bottom}/bin/btm";
       };
 
       "battery" = {
@@ -71,7 +71,15 @@ in {
         "format-icons" = ["" "" "" "" ""];
       };
 
-      "memory"."format" = "{used:0.1f}G/{total:0.1f}G  ";
+      "memory" = {
+        "format" = "{used:0.1f}G/{total:0.1f}G  ";
+        "on-click" = "${pkgs.alacritty}/bin/alacritty -e ${pkgs.bottom}/bin/btm";
+      };
+
+      "disk" = {
+        "format" = "{used}/{total} ";
+        "path" = "/";
+      };
 
       "network" = {
         "interface" = "${networkInterface.eth}";
@@ -81,6 +89,7 @@ in {
         "format-wifi" = "Up: {bandwidthUpBits} Down: {bandwidthDownBits} {essid} ({signalStrength}%)  ";
         "tooltip-format-wifi" = "{ifname} {essid} ({signalStrength}%) ";
         "format-disconnected" = "Disconnected ⚠";
+        "on-click" = "${pkgs.alacritty}/bin/alacritty -e ${pkgs.networkmanager}/bin/nmtui";
       };
 
       "pulseaudio" = {
@@ -96,13 +105,16 @@ in {
           "car" = "";
           "default" = ["" ""];
         };
-        "on-click" = "pavucontrol";
+        "on-click" = "${pkgs.pavucontrol}/bin/pavucontrol";
       };
+
       "temperature" = {
-        "hwmon-path" = "/sys/class/hwmon/hwmon2/temp1_input";
+        "hwmon-path" = "${hwmon}";
         "format" = "{}°C";
         "critical-threshold" = 80;
+        "on-click" = "${pkgs.alacritty}/bin/alacritty -e ${pkgs.bottom}/bin/btm";
       };
+
       "gamemode" = {
         "format" = "{glyph}";
         "format-alt" = "{glyph} {count}";

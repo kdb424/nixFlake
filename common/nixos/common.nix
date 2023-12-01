@@ -19,7 +19,7 @@
 
   nix.settings.auto-optimise-store = true;
   nix.optimise.automatic = true;
-  nix.settings.keep-derivations = false; # saves space. Turn off for easier debugging
+  #nix.settings.keep-derivations = false; # saves space. Turn off for easier debugging
 
   nix.settings.trusted-users = [
     "root"
@@ -33,7 +33,7 @@
 
   nix.gc = {
     automatic = true;
-    dates = "daily";
+    dates = "monthly";
     options = "--delete-older-than 14d";
   };
 
