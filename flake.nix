@@ -122,10 +122,12 @@
     homeConfigurations = {
       "kdb424@cubert" = mkHome [./home-manager/machines/cubert.nix] nixpkgs.legacyPackages.aarch64-darwin;
       "kdb424@farnsworth" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.aarch64-linux;
-      "kdb424@zapp" = mkHome [
-        stylix.homeManagerModules.stylix
-        ./home-manager/machines/headless.nix
-      ] nixpkgs.legacyPackages.x86_64-linux;
+      "kdb424@zapp" =
+        mkHome [
+          stylix.homeManagerModules.stylix
+          ./home-manager/machines/headless.nix
+        ]
+        nixpkgs.legacyPackages.x86_64-linux;
     };
   };
 

@@ -39,7 +39,7 @@
 
     general = {
       gaps_in = 5;
-      gaps_out = 16;
+      gaps_out = 8;
       resize_on_border = true;
       hover_icon_on_border = false;
       layout = "master";
