@@ -1,14 +1,13 @@
 {pkgs, ...}: {
   imports = [
     ./discord
+    ./games.nix
   ];
 
   programs.discord = {
     enable = true;
     wrapDiscord = false;
   };
-
-  programs.mangohud.enable = true;
 
   home.packages = with pkgs; [
     betterdiscordctl
