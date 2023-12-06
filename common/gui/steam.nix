@@ -16,4 +16,11 @@
       ];
     };
   };
+  environment.sessionVariables = {
+    # Proton GE flag
+    WINE_FULLSCREEN_FSR = "1";
+  };
+  environment.systemPackages = with pkgs; [
+    protonup
+  ];
 }

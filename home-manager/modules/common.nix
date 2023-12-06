@@ -7,6 +7,7 @@
   imports = [
     ./git.nix
     ./tmux.nix
+    ./lunarvim.nix
     ./vim.nix
     ./zsh
   ];
@@ -28,11 +29,8 @@
 
   home.packages = with pkgs;
     [
-      # Make sure ZSH is installed
-      # zsh # Mac includes x86_64. Nix is always native
-
       # dotfiles
-      # yadm
+      yadm
 
       # builtin replacements
       htop # modern top

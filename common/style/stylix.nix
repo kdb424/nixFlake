@@ -13,14 +13,14 @@
       popups = 0.8;
       terminal = 0.65;
     };
-    fonts.sizes = {
-      applications = 10;
-      desktop = 10;
-      popups = 14;
-      terminal = 10;
-    };
 
     fonts = {
+      sizes = {
+        applications = 10;
+        desktop = 10;
+        popups = 14;
+        terminal = 10;
+      };
       serif = {
         package = pkgs.meslo-lgs-nf;
         name = "MesloLGS NF";
@@ -40,6 +40,10 @@
         package = pkgs.noto-fonts-color-emoji;
         name = "Noto Color Emoji";
       };
+    };
+    cursor = {
+      package = pkgs.nordzy-cursor-theme;
+      name = "Nordzy-cursors";
     };
   };
 }
