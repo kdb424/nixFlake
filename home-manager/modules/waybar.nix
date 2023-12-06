@@ -164,7 +164,7 @@ in {
           "icon-spacing" = 4;
           "icon-size" = 20;
           "tooltip" = true;
-          "tooltip-format" = "<span color='${primaryColor}'>Games running: {count}</span>";
+          "tooltip-format" = "Games running: {count}";
         };
         "privacy" = {
           "icon-size" = 20;
