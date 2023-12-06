@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./waybar.nix
+    ./swaylock.nix
   ];
 
   services.mako = {
@@ -103,7 +104,7 @@
       "$mod, SPACE, exec, pkill fuzzel || ${pkgs.fuzzel}/bin/fuzzel" # pkill or allows for toggle
       "SUPER_SHIFT, SPACE, togglefloating"
       "$mod, F, fullscreen"
-      "$mod, L, exec, ${pkgs.swaylock-effects}/bin/swaylock -S --fade-in 1 --effect-blur 6x6"
+      "$mod, L, exec, ${pkgs.swaylock-effects}/bin/swaylock"
       "$mod, B, exec, ${pkgs.grim}/bin/grim \"desktop-$(${pkgs.busybox}/bin/date +\"%Y%m%d%H%m\").png"
       "SUPER_SHIFT, B, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\" - | ${pkgs.wl-clipboard}/bin/wl-copy" # Screenshot selection directly to clipboard
 
