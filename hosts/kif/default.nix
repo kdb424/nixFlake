@@ -19,7 +19,7 @@
 
   # Bootloader.
   boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/disk/by-id/ata-INTEL_SSDSC2KW256G8_BTLA733601VG256CGN ";
+  boot.loader.grub.device = "/dev/disk/by-id/ata-INTEL_SSDSC2KW256G8_BTLA733601VG256CGN";
   boot.loader.grub.useOSProber = true;
   boot.loader.grub.configurationLimit = 10;
 
