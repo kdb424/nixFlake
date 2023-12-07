@@ -25,6 +25,11 @@
       what = "127.0.0.1:/dockerdata";
       where = "/mnt/gdockerdata";
     }
+    {
+      type = "glusterfs";
+      what = "127.0.0.1:/backups";
+      where = "/mnt/gbackups";
+    }
   ];
 
   systemd.automounts = [
@@ -39,6 +44,10 @@
     {
       wantedBy = ["multi-user.target"];
       where = "/mnt/gdockerdata";
+    }
+    {
+      wantedBy = ["multi-user.target"];
+      where = "/mnt/gbackups";
     }
   ];
 
