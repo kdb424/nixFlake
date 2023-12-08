@@ -4,6 +4,8 @@
   pkgs,
   ...
 }: {
+  imports = [./common.nix];
+
   services.glusterfs = {
     enable = true;
     # killMode = "process";
@@ -31,24 +33,4 @@
       where = "/mnt/gbackups";
     }
   ];
-
-  systemd.automounts = [
-    {
-      wantedBy = ["multi-user.target"];
-      where = "/mnt/gdocker";
-    }
-    {
-      wantedBy = ["multi-user.target"];
-      where = "/mnt/gmedia";
-    }
-    {
-      wantedBy = ["multi-user.target"];
-      where = "/mnt/gdockerdata";
-    }
-    {
-      wantedBy = ["multi-user.target"];
-      where = "/mnt/gbackups";
-    }
-  ];
-
 }

@@ -13,7 +13,7 @@
     ./zfs.nix
     ../../common/nixos/common.nix
     ../../common/networking/zerotier.nix
-    ../../common/networking/gluster.nix
+    ../../common/networking/gluster
     ../../common/editors/emacs.nix
     ../../common/nixos/docker.nix
   ];

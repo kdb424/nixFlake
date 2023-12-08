@@ -11,7 +11,7 @@
     ./hardware-configuration.nix
     ./zfs.nix
     ../../common/nixos/common.nix
-    ../../common/networking/gluster.nix
+    ../../common/networking/gluster
     ../../common/networking/zerotier.nix
     ../../common/editors/emacs.nix
     ../../common/nixos/docker.nix

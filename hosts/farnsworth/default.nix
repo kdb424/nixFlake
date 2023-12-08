@@ -14,6 +14,7 @@
     ./hardware-configuration.nix
     ../../common/nixos/common.nix
     ../../common/nixos/docker.nix
+    ../../common/networking/gluster/client.nix
     ../../common/networking/zerotier.nix
     ../../common/editors/emacs.nix
     # Include the necessary packages and configuration for Apple Silicon support.
