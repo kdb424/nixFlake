@@ -33,4 +33,26 @@
       where = "/mnt/gbackups";
     }
   ];
+<<<<<<< Updated upstream:common/networking/gluster/default.nix
+=======
+
+  systemd.automounts = [
+    {
+      wantedBy = ["multi-user.target"];
+      where = "/mnt/gdocker";
+    }
+    {
+      wantedBy = ["multi-user.target"];
+      where = "/mnt/gmedia";
+    }
+    {
+      wantedBy = ["multi-user.target"];
+      where = "/mnt/gdockerdata";
+    }
+    {
+      wantedBy = ["multi-user.target"];
+      where = "/mnt/gbackups";
+    }
+  ];
+>>>>>>> Stashed changes:common/networking/gluster.nix
 }
