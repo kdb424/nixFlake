@@ -12,11 +12,10 @@
   home.packages = with pkgs; [
     betterdiscordctl
     gimp
-    gparted
     kodi-wayland
     pavucontrol
-    schildichat-desktop-wayland
     sublime-music
+    sonixd
     thunderbird
     kicad
   ];
