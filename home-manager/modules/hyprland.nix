@@ -6,12 +6,8 @@
   imports = [
     ./waybar.nix
     ./swaylock.nix
+    ./notificationCenter.nix
   ];
-
-  services.mako = {
-    enable = true;
-    defaultTimeout = 4000;
-  };
 
   wayland.windowManager.hyprland.enable = true;
   programs.fuzzel.enable = true;
@@ -168,6 +164,7 @@
       # Enables clipboard sync
       "${pkgs.wl-clipboard}/bin/wl-paste -p | ${pkgs.wl-clipboard}/bin/wl-copy"
       "${pkgs.wl-clipboard}/bin/wl-paste | ${pkgs.wl-clipboard}/bin/wl-copy -p"
+      "${pkgs.swaynotificationcenter}/bin/swaync"
     ];
   };
 

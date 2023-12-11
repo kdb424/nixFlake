@@ -33,7 +33,7 @@ in {
         margin = "2px 2px 0px 2px";
         modules-left = ["hyprland/workspaces"];
         modules-center = ["hyprland/window" "gamemode"];
-        modules-right = ["network" "cpu" "temperature" "memory" "disk" "pulseaudio" "battery" "tray" "clock" "privacy"];
+        modules-right = ["network" "cpu" "temperature" "memory" "disk" "pulseaudio" "battery" "tray" "clock" "privacy" "custom/notification" ];
 
         "hyprland/window" = {
           format = "<span color='${primaryColor}'>{}</span>";
@@ -166,6 +166,7 @@ in {
           "tooltip" = true;
           "tooltip-format" = "Games running: {count}";
         };
+
         "privacy" = {
           "icon-size" = 20;
           "icon-spacing" = 4;
@@ -182,6 +183,27 @@ in {
               "tooltip-icon-size" = 24;
             }
           ];
+        };
+
+        "custom/notification" = {
+          "tooltip" = false;
+          "format" = "{icon}  ";
+          "format-icons" = {
+            "notification" = "<span foreground='red'><sup></sup></span>";
+            "none" = "";
+            "dnd-notification" = "<span foreground='red'><sup></sup></span>";
+            "dnd-none" = "";
+            "inhibited-notification" = "<span foreground='red'><sup></sup></span>";
+            "inhibited-none" = "";
+            "dnd-inhibited-notification" = "<span foreground='red'><sup></sup></span>";
+            "dnd-inhibited-none" = "";
+            };
+          "return-type" = "json";
+          "exec-if" = "${pkgs.swaynotificationcenter}/bin/swaync-client";
+          "exec" = "${pkgs.swaynotificationcenter}/bin/swaync-client -swb";
+          "on-click" = "${pkgs.swaynotificationcenter}/bin/swaync-client -t -sw";
+          "on-click-right" = "${pkgs.swaynotificationcenter}/bin/swaync-client -d -sw";
+          "escape" = true;
         };
       };
     };
