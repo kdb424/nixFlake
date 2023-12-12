@@ -71,10 +71,5 @@
       what = "127.0.0.1:/tdarr";
       where = "/mnt/tdarr";
     }
-    {
-      type = "glusterfs";
-      what = "127.0.0.1:/ngircd";
-      where = "/mnt/ngircd";
-    }
   ];
 }

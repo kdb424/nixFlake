@@ -58,9 +58,5 @@
       wantedBy = ["multi-user.target"];
       where = "/mnt/tdarr";
     }
-    {
-      wantedBy = ["multi-user.target"];
-      where = "/mnt/ngircd";
-    }
   ];
 }
