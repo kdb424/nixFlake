@@ -27,6 +27,7 @@ in
     swaynotificationcenter
   ];
 
+  # man 5 swaync
   home.file.".config/swaync/config.json".text = ''
       {
         "positionX": "right",
@@ -55,7 +56,7 @@ in
         "keyboard-shortcuts": true,
         "image-visibility": "when-available",
         "transition-time": 200,
-        "hide-on-clear": false,
+        "hide-on-clear": true,
         "hide-on-action": true,
         "script-fail-notify": true,
 
@@ -87,6 +88,9 @@ in
           },
           "dnd": {
             "text": "Do Not Disturb"
+          },
+          "volume": {
+            "show-per-app": true
           },
           "buttons-grid": {
             "actions": [
