@@ -71,5 +71,10 @@
       what = "morbo:/tdarr";
       where = "/mnt/tdarr";
     }
+    {
+      type = "glusterfs";
+      what = "morbo:/ngircd";
+      where = "/mnt/ngircd";
+    }
   ];
 }
