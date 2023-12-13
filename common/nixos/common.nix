@@ -10,6 +10,7 @@
     ./packages.nix
     ./users.nix
     ./locale.nix
+    ./smart.nix
     ../../common/style/stylix.nix
   ];
   #
