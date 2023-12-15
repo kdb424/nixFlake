@@ -33,7 +33,7 @@ in {
         margin = "2px 2px 0px 2px";
         modules-left = ["hyprland/workspaces"];
         modules-center = ["hyprland/window" "gamemode"];
-        modules-right = ["network" "cpu" "temperature" "memory" "disk" "pulseaudio" "battery" "tray" "clock" "privacy" "custom/notification" ];
+        modules-right = ["network" "cpu" "temperature" "memory" "disk" "pulseaudio" "battery" "tray" "clock" "privacy" "custom/notification"];
 
         "hyprland/window" = {
           format = "<span color='${primaryColor}'>{}</span>";
@@ -197,7 +197,7 @@ in {
             "inhibited-none" = "";
             "dnd-inhibited-notification" = "<span foreground='red'><sup></sup></span>";
             "dnd-inhibited-none" = "";
-            };
+          };
           "return-type" = "json";
           "exec-if" = "${pkgs.swaynotificationcenter}/bin/swaync-client";
           "exec" = "${pkgs.swaynotificationcenter}/bin/swaync-client -swb";
