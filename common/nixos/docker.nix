@@ -12,8 +12,15 @@
     options = ["x-systemd.automount" "noauto" "soft"];
   };
 
-  virtualisation.docker.enable = true;
-  virtualisation.docker.liveRestore = false;
+  virtualisation.docker = {
+    enable = true;
+    liveRestore = false;
+    autoPrune = {
+      enable = true;
+      flags = ["--all"];
+    };
+  };
+
   users.users.kdb424.extraGroups = ["docker"];
   networking.firewall.enable = false;
 
