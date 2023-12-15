@@ -11,6 +11,7 @@
     ./users.nix
     ./locale.nix
     ./smart.nix
+    # ./prometheus.nix
     ../../common/style/stylix.nix
   ];
   #
