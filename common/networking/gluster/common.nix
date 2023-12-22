@@ -12,6 +12,10 @@
   systemd.automounts = [
     {
       wantedBy = ["multi-user.target"];
+      where = "/mnt/gp3600";
+    }
+    {
+      wantedBy = ["multi-user.target"];
       where = "/mnt/gdocker";
     }
     {

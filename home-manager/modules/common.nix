@@ -58,6 +58,7 @@
       screen # multiplexer
       unzip # sometimes 7z ain't gonna cut it
       killall # rip processes
+      magic-wormhole # p2p send one off files
 
       # tui apps
       #ncdu_2

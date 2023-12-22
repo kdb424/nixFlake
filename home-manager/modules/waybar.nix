@@ -7,7 +7,7 @@
 }: let
   networkInterface.eth =
     if osConfig.networking.hostName == "planex"
-    then "enp2s0f0"
+    then "enp6s0f0"
     else if osConfig.networking.hostName == "amy"
     then "wlp2s0"
     else "";
@@ -23,6 +23,9 @@
 in {
   programs.waybar = {
     enable = true;
+    package = pkgs.waybar.overrideAttrs (oldAttrs: {
+      mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
+    });
 
     settings = {
       mainBar = {
