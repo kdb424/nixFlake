@@ -10,7 +10,7 @@
     ../../common/nixos/zfs.nix
   ];
   networking.hostId = "eb081e21";
-  boot.zfs.extraPools = ["exos"];
+  boot.zfs.extraPools = ["exos" "p3600"];
   boot.kernelParams = ["zfs.zfs_arc_max=8589934592"]; # 8GB
 
   services.zfs.autoSnapshot.enable = true;
