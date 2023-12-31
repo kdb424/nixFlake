@@ -23,5 +23,6 @@
     home-manager
     git
     nix-tree
+    xfsprogs
   ];
 }

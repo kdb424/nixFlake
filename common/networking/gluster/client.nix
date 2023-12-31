@@ -31,5 +31,10 @@
       what = "morbo:/backups";
       where = "/mnt/gbackups";
     }
+    {
+      type = "glusterfs";
+      what = "morbo:/minecraft";
+      where = "/mnt/gminecraft";
+    }
   ];
 }

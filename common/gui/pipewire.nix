@@ -25,4 +25,19 @@
     pipewire
     wireplumber
   ];
+
+  environment.etc.
+  "wireplumber/main.lua.d/99-alsa-lowlatency.lua".text = ''
+    alsa_monitor.rules = {
+      {
+        matches = {{{ "node.name", "matches", "alsa_output.usb-DENAFRIPS*" }}};
+        apply_properties = {
+          ["audio.format"] = "S32LE",
+          ["audio.rate"] = "128000", -- for USB soundcards it should be twice your desired rate
+          ["api.alsa.period-size"] = 2, -- defaults to 1024, tweak by trial-and-error
+          -- ["api.alsa.disable-batch"] = true, -- generally, USB soundcards use the batch mode
+        },
+      },
+    }
+  '';
 }

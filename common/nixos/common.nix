@@ -10,7 +10,7 @@
     ./packages.nix
     ./users.nix
     ./locale.nix
-    ./smart.nix
+    # ./smart.nix
     # ./prometheus.nix
     ../../common/style/stylix.nix
   ];

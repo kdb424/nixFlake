@@ -26,5 +26,9 @@
       wantedBy = ["multi-user.target"];
       where = "/mnt/gbackups";
     }
+    {
+      wantedBy = ["multi-user.target"];
+      where = "/mnt/gminecraft";
+    }
   ];
 }
