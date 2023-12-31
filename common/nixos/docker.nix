@@ -6,12 +6,6 @@
   outputs,
   ...
 }: {
-  fileSystems."/mnt/docker" = {
-    device = "morbo.far:/mnt/t7blue/docker";
-    fsType = "nfs";
-    options = ["x-systemd.automount" "noauto" "soft"];
-  };
-
   virtualisation.docker = {
     enable = true;
     liveRestore = false;
