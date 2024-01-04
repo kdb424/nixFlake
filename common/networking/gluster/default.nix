@@ -31,10 +31,5 @@
       what = "127.0.0.1:/backups";
       where = "/mnt/gbackups";
     }
-    {
-      type = "glusterfs";
-      what = "127.0.0.1:/minecraft";
-      where = "/mnt/gminecraft";
-    }
   ];
 }

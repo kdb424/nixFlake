@@ -49,6 +49,7 @@ in {
 
       # Other
       zsnaplatest = "zfs list -t snapshot -H -S creation -o name -d 1";
+      zl = "zfs list -o name,used,refer,written -r -t";
       emacsnw = "emacsclient -nw -c";
       install-doom = "git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d && ~/.emacs.d/bin/doom install";
       fhinit = "nix run \"https://flakehub.com/f/DeterminateSystems/fh/*.tar.gz\" -- init";

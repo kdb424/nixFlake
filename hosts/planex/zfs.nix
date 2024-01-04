@@ -13,7 +13,14 @@
   boot.zfs.extraPools = ["exos" "p3600"];
   boot.kernelParams = ["zfs.zfs_arc_max=8589934592"]; # 8GB
 
-  services.zfs.autoSnapshot.enable = true;
+  services.zfs.autoSnapshot = {
+    enable = true;
+    frequent = 4;
+    hourly = 24;
+    daily = 7;
+    weekly = 4;
+    monthly = 0;
+  };
 
   users.users.zfs = {
     isNormalUser = true;
