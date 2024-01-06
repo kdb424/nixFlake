@@ -101,7 +101,7 @@
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       # M1 mac mini
-      farnsworth = mkNixos [./hosts/farnsworth];
+      farnsworth = mkHeadlessNixos [./hosts/farnsworth];
 
       # Laptop
       amy = mkNixos [
