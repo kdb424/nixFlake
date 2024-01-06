@@ -34,6 +34,23 @@
         specialArgs = {inherit inputs outputs;};
       };
 
+    mkHeadlessNixos = modules:
+      nixpkgs.lib.nixosSystem {
+        modules =
+          modules
+          ++ [
+            home-manager.nixosModules.home-manager
+            nix-index-database.nixosModules.nix-index
+            {
+              home-manager.users.kdb424 = ./home-manager/machines/headless.nix;
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = {inherit inputs outputs;};
+            }
+          ];
+        specialArgs = {inherit inputs outputs;};
+      };
+
     mkDarwin = system: modules:
       inputs.darwin.lib.darwinSystem {
         inherit modules system inputs;
@@ -93,9 +110,8 @@
       ];
 
       # Small intel server
-      kif = mkNixos [
+      kif = mkHeadlessNixos [
         ./hosts/kif
-        {home-manager.users.kdb424 = ./home-manager/machines/headless.nix;}
       ];
 
       # Ryzen Fifth gen
@@ -105,9 +121,8 @@
       ];
 
       # Ryzen Second gen
-      morbo = mkNixos [
+      morbo = mkHeadlessNixos [
         ./hosts/morbo
-        {home-manager.users.kdb424 = ./home-manager/machines/headless.nix;}
       ];
     };
 
@@ -122,12 +137,7 @@
     homeConfigurations = {
       "kdb424@cubert" = mkHome [./home-manager/machines/cubert.nix] nixpkgs.legacyPackages.aarch64-darwin;
       "kdb424@farnsworth" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.aarch64-linux;
-      "kdb424@zapp" =
-        mkHome [
-          stylix.homeManagerModules.stylix
-          ./home-manager/machines/headless.nix
-        ]
-        nixpkgs.legacyPackages.x86_64-linux;
+      "kdb424@zapp" = mkHome [./home-manager/machines/headless.nix] nixpkgs.legacyPackages.x86_64-linux;
     };
   };
 

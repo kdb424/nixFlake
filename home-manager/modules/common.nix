@@ -7,7 +7,7 @@
   imports = [
     ./git.nix
     ./tmux.nix
-    ./lunarvim.nix
+    # ./lunarvim.nix
     ./vim.nix
     ./zsh
   ];

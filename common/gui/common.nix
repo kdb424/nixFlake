@@ -1,4 +1,8 @@
 {pkgs, ...}: {
+  imports = [
+    ../../common/style/stylix.nix
+  ];
+
   services.printing.enable = true;
 
   hardware.keyboard.qmk.enable = true;
