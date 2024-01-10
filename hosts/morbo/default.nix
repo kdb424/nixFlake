@@ -10,19 +10,17 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./zfs.nix
     ../../common/nixos/common.nix
+    ../../common/networking/gluster/client.nix
     ../../common/networking/zerotier.nix
-    ../../common/networking/gluster
     ../../common/editors/emacs.nix
     ../../common/nixos/docker.nix
   ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.systemd-boot.configurationLimit = 10;
-
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.useOSProber = true;
   networking.hostName = "morbo";
 
   # Enable networking

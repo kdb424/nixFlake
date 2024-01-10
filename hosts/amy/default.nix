@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./hardware-configuration.nix
-    ../../common/nixos/common.nix
+    ../../common/nixos/baremetal.nix
     ../../common/networking/zerotier.nix
     ../../common/editors/emacs.nix
     ../../common/gui/games.nix

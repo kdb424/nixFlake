@@ -12,7 +12,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../common/nixos/common.nix
+    ../../common/nixos/baremetal.nix
     ../../common/nixos/docker.nix
     ../../common/networking/gluster/client.nix
     ../../common/networking/zerotier.nix
