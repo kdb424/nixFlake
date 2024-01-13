@@ -5,7 +5,7 @@
     powerOnBoot = true;
   };
 
-  services.upower.enable = true;
+  #services.upower.enable = true;
 
   services.joycond.enable = true;
 }

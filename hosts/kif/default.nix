@@ -9,9 +9,8 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./zfs.nix
     ../../common/nixos/baremetal.nix
-    ../../common/networking/gluster
+    # ./zfs.nix
     ../../common/networking/zerotier.nix
     ../../common/editors/emacs.nix
     ../../common/nixos/docker.nix

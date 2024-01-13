@@ -9,10 +9,9 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./zfs.nix
     ../../common/nixos/baremetal.nix
+    # ./zfs.nix
     ../../common/networking/zerotier.nix
-    ../../common/networking/gluster
     ../../common/editors/emacs.nix
     ../../common/nixos/docker.nix
     ../../common/gui/games.nix
@@ -35,12 +34,4 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
-  # Logitech G502 stuff
-  # services.hardware.openrgb.enable = true;
-  # services.ratbagd.enable = true;
-  # environment.systemPackages = with pkgs; [
-  #   openrgb-with-all-plugins
-  #   piper
-  # ];
 }

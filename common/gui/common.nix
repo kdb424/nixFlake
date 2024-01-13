@@ -17,5 +17,6 @@
     qt6.qtwayland
     adwaita-qt
     adwaita-qt6
+    mkvtoolnix
   ];
 }
