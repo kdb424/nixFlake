@@ -11,7 +11,6 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../common/nixos/common.nix
-    ../../common/networking/gluster/client.nix
     ../../common/networking/zerotier.nix
     ../../common/editors/emacs.nix
     ../../common/nixos/docker.nix
