@@ -120,9 +120,14 @@
         {home-manager.users.kdb424 = ./home-manager/machines/planex.nix;}
       ];
 
-      # Ryzen Second gen
+      # Epyc VM
       morbo = mkHeadlessNixos [
         ./hosts/morbo
+      ];
+
+      # Epyc VM
+      calculon = mkHeadlessNixos [
+        ./hosts/calculon
       ];
     };
 
