@@ -24,5 +24,6 @@
     git
     nix-tree
     xfsprogs
+    nfs-utils
   ];
 }

@@ -10,6 +10,7 @@
   };
 
   home.packages = with pkgs; [
+    orca-slicer
     betterdiscordctl
     gimp
     kodi-wayland
