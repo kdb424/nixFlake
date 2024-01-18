@@ -3,7 +3,7 @@
 
   programs.alacritty.settings = {
     selection.save_to_clipboard = true;
-    key_bindings = [
+    keyboard.bindings = [
       {
         key = "Insert";
         mods = "Shift";
