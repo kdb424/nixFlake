@@ -14,6 +14,7 @@
     ../../common/networking/zerotier.nix
     ../../common/editors/emacs.nix
     ../../common/nixos/docker.nix
+    ../../common/nixos/remoteBuild.nix
     ../../common/gui/games.nix
     ../../common/gui/steamUltrawide.nix
     ../../common/gui/hyprland.nix

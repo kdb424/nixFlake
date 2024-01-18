@@ -11,6 +11,7 @@
     ./hardware-configuration.nix
     ../../common/nixos/baremetal.nix
     # ./zfs.nix
+    ../../common/nixos/remoteBuild.nix
     ../../common/networking/zerotier.nix
     ../../common/editors/emacs.nix
     ../../common/nixos/docker.nix

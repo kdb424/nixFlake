@@ -58,15 +58,15 @@ trace target_host=hostname: (build target_host "--show-trace")
 switch target_host=hostname:
   sudo nixos-rebuild switch --flake .#{{target_host}} {{rebuild_flags}}
 
+# Build the NixOS configuration remotely and switch to it.
+[linux]
+remote target_host=hostname:
+  sudo nixos-rebuild switch --flake .#{{target_host}} {{rebuild_flags}} --max-jobs 1 --builders @/etc/nix/machines
+
 # Build the NixOS configuration and switch to it on next boot.
 [linux]
 boot target_host=hostname:
   sudo nixos-rebuild boot --flake .#{{target_host}} {{rebuild_flags}}
-
-# Update flake inputs to their latest revisions
-update:
-  nix flake update --commit-lock-file
-
 
 # Garbage collect old OS generations and remove stale packages from the nix store
 gc generations="5d":

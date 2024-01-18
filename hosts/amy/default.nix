@@ -8,6 +8,7 @@
     ../../common/gui/hyprland.nix
     ../../common/style/stylix.nix
     ../../common/hardware/laptop.nix
+    ../../common/nixos/remoteBuild.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -23,4 +24,6 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  nix.distributedBuilds = true;
 }
