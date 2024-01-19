@@ -8,7 +8,7 @@
     # ];
 
     # Mac rebinds
-    key_bindings = [
+    keyboard.bindings = [
       {
         key = "A";
         mods = "Command";
