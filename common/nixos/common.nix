@@ -10,7 +10,7 @@
     ./packages.nix
     ./users.nix
     ./locale.nix
-    # ./prometheus.nix
+    ./glances.nix
   ];
   #
   nixpkgs.config.allowUnfree = true;
