@@ -6,6 +6,9 @@
   outputs,
   ...
 }: {
+  networking.firewall = {
+    allowedTCPPorts = [61208];
+  };
   systemd.services.glances = {
     enable = true;
     description = "Services web server";
