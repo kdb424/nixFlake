@@ -38,4 +38,6 @@
     memoryPercent = 25;
     priority = 10;
   };
+
+  boot.tmp.useTmpfs = true;
 }
