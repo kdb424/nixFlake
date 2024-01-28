@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
     ../../common/nixos/baremetal.nix
@@ -26,4 +26,7 @@
   services.openssh.enable = true;
 
   nix.distributedBuilds = true;
+
+  # Latest stable kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 }

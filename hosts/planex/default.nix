@@ -35,4 +35,7 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  # Latest stable kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 }

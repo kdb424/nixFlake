@@ -29,4 +29,7 @@
   services.openssh.enable = true;
 
   services.earlyoom.enable = true;
+
+  # Latest stable kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 }

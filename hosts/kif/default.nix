@@ -24,6 +24,7 @@
   boot.loader.grub.configurationLimit = 10;
 
   networking.hostName = "kif"; # Define your hostname.
+
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -35,4 +36,7 @@
     pkgs.cdparanoia
     pkgs.flac
   ];
+
+  # Latest stable kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 }
