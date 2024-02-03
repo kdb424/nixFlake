@@ -8,7 +8,7 @@
     ./dbus.nix
     ./pipewire.nix
     ./wayland.nix
-    ./displayManager.nix
+    # ./displayManager.nix
     ./xdg.nix
   ];
 
@@ -32,8 +32,8 @@
   services = {
     xserver = {
       enable = true;
-      layout = "us";
-      xkbVariant = "";
+      xkb.layout = "us";
+      xkb.variant = "";
       excludePackages = [pkgs.xterm];
       videoDrivers = ["amdgpu"];
       libinput = {
