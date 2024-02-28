@@ -15,7 +15,7 @@ trace target_host=hostname: (build target_host "--show-trace")
 
 # Build the nix-darwin configuration and switch to it
 [macos]
-switch target_host=hostname: (build target_host) && hm-switch
+switch target_host=hostname: (build target_host)
   #!/usr/bin/env bash
   set -euxo pipefail
   echo "switching to new config for {{target_host}}"
@@ -27,7 +27,9 @@ switch target_host=hostname: (build target_host) && hm-switch
     sudo mv /etc/bashrc /etc/bashrc.before.nix
   fi
   # if macOS updates and overwrites /etc/shells, nix will refuse to update it
-  sudo mv /etc/shells /tmp/shells.bak
+  if test -f /etc/shells; then
+    sudo mv /etc/shells /tmp/shells.bak
+  fi
   ./result/sw/bin/darwin-rebuild switch --flake ".#{{target_host}}"
 
 # Reload the skhd (hotkey daemon) service to apply new config. Workaround for config changes not being auto-detected.
