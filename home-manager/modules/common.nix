@@ -22,11 +22,6 @@
     nix-direnv.enable = true;
   };
 
-  services.lorri = {
-    enable = true;
-    enableNotifications = true;
-  };
-
   home.packages = with pkgs;
     [
       # dotfiles

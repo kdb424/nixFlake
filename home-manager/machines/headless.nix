@@ -22,5 +22,6 @@
   programs.home-manager.enable = true;
   imports = [
     ../modules/common.nix
+    ../modules/linux.nix
   ];
 }

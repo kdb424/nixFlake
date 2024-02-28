@@ -23,6 +23,7 @@
   imports = [
     ../modules/common.nix
     ../modules/commonGUI.nix
+    ../modules/linux.nix
     ../modules/linuxGUI.nix
     ../modules/hyprland.nix
   ];

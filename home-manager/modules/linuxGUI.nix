@@ -9,6 +9,9 @@
     wrapDiscord = false;
   };
 
+  # Bluetooth power alerts
+  services.poweralertd.enable = true;
+
   home.packages = with pkgs; [
     orca-slicer
     betterdiscordctl

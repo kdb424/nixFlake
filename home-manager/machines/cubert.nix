@@ -28,6 +28,7 @@
     ../modules/mac.nix
     ../modules/commonGUI.nix
   ];
+
   stylix = {
     image = pkgs.fetchurl {
       url = "https://w.wallhaven.cc/full/1p/wallhaven-1poo61.jpg";

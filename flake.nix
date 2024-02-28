@@ -134,8 +134,10 @@
     darwinConfigurations = {
       # M2 Mac mini
       cubert = mkDarwin "aarch64-darwin" [
-        ./hosts/cubert
+        {home-manager.users.kdb424 = ./home-manager/machines/cubert.nix;}
         home-manager.darwinModules.home-manager
+        stylix.darwinModules.stylix
+        ./hosts/cubert
       ];
     };
 
