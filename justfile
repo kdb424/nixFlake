@@ -96,4 +96,6 @@ hm-switch:
 # Nuclear option to get space back
 gc-full:
   sudo nix-env --delete-generations old
-  sudo nix-store --gc
+
+optimise:
+  nix store optimise
