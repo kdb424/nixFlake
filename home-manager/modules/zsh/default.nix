@@ -6,6 +6,10 @@
     ./p10k.nix
     ./zprofile.nix
   ];
+
+  # Comma/nix-shell -p
+  programs.nix-index.enable = true;
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;

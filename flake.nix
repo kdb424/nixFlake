@@ -140,6 +140,7 @@
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {inherit inputs outputs;};
         }
+        nix-index-database.darwinModules.nix-index
         home-manager.darwinModules.home-manager
         stylix.darwinModules.stylix
         ./hosts/cubert

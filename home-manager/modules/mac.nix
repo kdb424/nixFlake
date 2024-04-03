@@ -8,5 +8,6 @@
     nodePackages.pnpm # betterdiscord
     unrar
     pywal
+    comma # Unfortunate hack
   ];
 }
