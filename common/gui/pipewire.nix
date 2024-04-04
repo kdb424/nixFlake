@@ -21,9 +21,10 @@
     #media-session.enable = true;
   };
 
+  services.pipewire.wireplumber.enable;
+
   environment.systemPackages = with pkgs; [
     pipewire
-    wireplumber
   ];
 
   environment.etc.
