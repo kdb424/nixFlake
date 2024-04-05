@@ -22,6 +22,6 @@
     192.168.194.38 cubert.far
     192.168.194.200 kif.far
     192.168.194.189 morbo.far
-
+    192.168.194.251 homeassistant.far
   '';
 }
