@@ -18,7 +18,6 @@
     gimp
     kodi-wayland
     pavucontrol
-    sublime-music
     sonixd
     thunderbird
     kicad

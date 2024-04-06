@@ -81,6 +81,7 @@
     gsettings-desktop-schemas
     udiskie
   ];
+
   environment.sessionVariables = {
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_DESKTOP = "Hyprland";

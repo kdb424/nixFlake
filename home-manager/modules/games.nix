@@ -2,7 +2,7 @@
   programs.mangohud.enable = true;
 
   home.packages = with pkgs; [
-    yuzu-mainline
+    #yuzu-mainline
   ];
 
   # Desktop entry for steam gamescope
