@@ -12,7 +12,6 @@
     ./hardware-configuration.nix
     ../../common/nixos/common.nix
     ../../common/networking/zerotier.nix
-    ../../common/editors/emacs.nix
     ../../common/nixos/docker.nix
   ];
 
