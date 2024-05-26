@@ -31,7 +31,7 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
-  boot.loader.systemd-boot.configurationLimit = 10;
+  boot.loader.systemd-boot.configurationLimit = 2;
 
   networking.hostName = "farnsworth"; # Define your hostname.
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
