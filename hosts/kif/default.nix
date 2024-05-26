@@ -30,6 +30,9 @@
 
   services.earlyoom.enable = true;
 
+  # Proxmox additions
+  services.qemuGuest.enable = true;
+
   # Latest stable kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 }

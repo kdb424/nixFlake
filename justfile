@@ -44,12 +44,12 @@ rebuild_flags := `if [ -d /boot/asahi ]; then echo "--impure"; else echo ""; fi`
 # Build the NixOS configuration without switching to it
 [linux]
 build target_host=hostname flags="":
-	nixos-rebuild build --flake .#{{target_host}} {{rebuild_flags}} {{flags}}
+  nixos-rebuild build --flake .#{{target_host}} {{rebuild_flags}} {{flags}}
 
 # Build the NixOS configuration without switching to it
 [linux]
 build-vm target_host=hostname flags="":
-	nixos-rebuild build-vm --flake .#{{target_host}} {{rebuild_flags}} {{flags}}
+  nixos-rebuild build-vm --flake .#{{target_host}} {{rebuild_flags}} {{flags}}
 
 # Build the NixOS config with the --show-trace flag set
 [linux]
@@ -58,17 +58,14 @@ trace target_host=hostname: (build target_host "--show-trace")
 # Build the NixOS configuration and switch to it.
 [linux]
 switch target_host=hostname:
-  sudo nixos-rebuild switch --flake .#{{target_host}} {{rebuild_flags}}
-
-# Build the NixOS configuration remotely and switch to it.
-[linux]
-remote target_host=hostname:
-  sudo nixos-rebuild switch --flake .#{{target_host}} {{rebuild_flags}} --max-jobs 1 --builders @/etc/nix/machines
+  #sudo nixos-rebuild switch --flake .#{{target_host}} {{rebuild_flags}}
+  nh os switch
 
 # Build the NixOS configuration and switch to it on next boot.
 [linux]
 boot target_host=hostname:
-  sudo nixos-rebuild boot --flake .#{{target_host}} {{rebuild_flags}}
+  #sudo nixos-rebuild boot --flake .#{{target_host}} {{rebuild_flags}}
+  nh os boot
 
 # Garbage collect old OS generations and remove stale packages from the nix store
 gc generations="5d":
