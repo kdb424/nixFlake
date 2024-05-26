@@ -12,14 +12,14 @@
     ../../common/nixos/baremetal.nix
     # ./zfs.nix
     ../../common/networking/zerotier.nix
-    ../../common/editors/emacs.nix
+    #../../common/editors/emacs.nix
     ../../common/nixos/docker.nix
-    ../../common/gui/games.nix
-    ../../common/gui/steamUltrawide.nix
-    ../../common/gui/hyprland.nix
+    #../../common/gui/games.nix
+    #../../common/gui/steamUltrawide.nix
+    #../../common/gui/hyprland.nix
     ../../common/style/stylix.nix
     ../../common/hardware/bluetooth.nix
-    ../../common/hardware/amdgpu.nix
+    #../../common/hardware/amdgpu.nix
   ];
 
   # Bootloader.
