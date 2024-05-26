@@ -41,7 +41,8 @@
     priority = 10;
   };
 
-  boot.tmp.useTmpfs = true;
+  # Some Rust packages can not build in such little space
+  boot.tmp.useTmpfs = false;
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
