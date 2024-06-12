@@ -109,11 +109,6 @@
         {home-manager.users.kdb424 = ./home-manager/machines/amy.nix;}
       ];
 
-      # Small intel server
-      kif = mkHeadlessNixos [
-        ./hosts/kif
-      ];
-
       # Ryzen Fifth gen
       planex = mkNixos [
         ./hosts/planex
@@ -128,6 +123,16 @@
       # Epyc VM
       calculon = mkHeadlessNixos [
         ./hosts/calculon
+      ];
+
+      # Epyc VM
+      kif = mkHeadlessNixos [
+        ./hosts/kif
+      ];
+
+      # Epyc VM
+      scruffy = mkHeadlessNixos [
+        ./hosts/scruffy
       ];
     };
 
