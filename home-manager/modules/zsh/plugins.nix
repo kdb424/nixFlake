@@ -48,4 +48,7 @@
     enable = true;
     enableZshIntegration = true;
   };
+  home.packages = with pkgs; [
+    perl # needed for plugins
+  ];
 }

@@ -79,7 +79,8 @@ hm-build:
   if ! test -f ~/.local/state/nix/profiles; then
     mkdir -p ~/.local/state/nix/profiles
   fi
-  home-manager build --flake .
+  # home-manager build --flake .
+  nh home build .
 
 # Switch to home manager
 hm-switch:
@@ -88,7 +89,8 @@ hm-switch:
   if ! test -f ~/.local/state/nix/profiles; then
     mkdir -p ~/.local/state/nix/profiles
   fi
-  home-manager switch --flake .
+  # home-manager switch --flake .
+  nh home switch .
 
 # Nuclear option to get space back
 gc-full:

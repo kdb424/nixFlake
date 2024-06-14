@@ -6,7 +6,7 @@
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "kdb424";
-  #home.homeDirectory = "/home/kdb424";
+  home.homeDirectory = "/home/kdb424";
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
