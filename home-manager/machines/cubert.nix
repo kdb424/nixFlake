@@ -28,8 +28,9 @@
     ../modules/mac.nix
     ../modules/commonGUI.nix
   ];
-
+  
   stylix = {
+    autoEnable = true;
     image = pkgs.fetchurl {
       url = "https://w.wallhaven.cc/full/1p/wallhaven-1poo61.jpg";
       sha256 = "sha256-PFlo9gszKxsM73jdIP+IB6Hv+AoQlryVXxd++1oZN+c=";

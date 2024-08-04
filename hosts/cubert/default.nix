@@ -11,9 +11,10 @@ in {
   ];
 
   stylix = {
+    autoEnable = true;
     image = pkgs.fetchurl {
-      url = "https://git.kdb424.xyz/kdb424/wallpapers/raw/branch/main/wallhaven-zmomkv.jpg";
-      sha256 = "sha256-vQIFAK9gzFl3DvDbyuM+MIvSW3OLL9IR1qn0hgsqnVU=";
+      url = "https://git.kdb424.xyz/kdb424/wallpapers/raw/branch/main/wallhaven-kwk9o6.jpg";
+      sha256 = "sha256-x2oFkDrt+96gd603hXC1T/FxpJJIuiI8xrww4REdzLE=";
     };
   };
 

@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    ./alacritty/mac.nix
+    ./kitty/mac.nix
   ];
 
   home.packages = with pkgs; [
@@ -9,5 +9,6 @@
     unrar
     pywal
     comma # Unfortunate hack
+    kitty
   ];
 }

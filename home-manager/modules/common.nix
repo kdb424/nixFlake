@@ -7,7 +7,6 @@
   imports = [
     ./git.nix
     ./tmux.nix
-    # ./lunarvim.nix
     ./vim.nix
     ./zsh
   ];
@@ -28,72 +27,70 @@
       yadm
 
       # builtin replacements
-      htop # modern top
       bottom # even more top
       colordiff # gimme my colours
       du-dust # modern du
       eza # modern ls
       fd # way faster find
+      fzf # fuzzy finding
+      htop # modern top
       ripgrep # faster grep
+      tealdeer # tldr, but rusty
       thefuck # Can't type? fuck
       zoxide # cd is just too slow
-      fzf # fuzzy finding
-      tealdeer # tldr, but rusty
 
       # multiplexers
       tmate # here's what I see
 
       # misc tools
-      tree # I don't even know what to grep
-      p7zip # gotta extract 'em all
-      yt-dlp # yoink yt
-      mkvtoolnix # the only container that matters
       hyperfine # benchmark
-      neofetch # Check what system I'm on
-      screen # multiplexer
-      unzip # sometimes 7z ain't gonna cut it
       killall # rip processes
       magic-wormhole # p2p send one off files
+      neofetch # Check what system I'm on
+      p7zip # gotta extract 'em all
+      screen # multiplexer
+      tree # I don't even know what to grep
+      unzip # sometimes 7z ain't gonna cut it
+      yt-dlp # yoink yt
 
       # tui apps
       #ncdu_2
 
       # networking
-      gping # ping with TUI
+      gping # ping with tui
+      imagemagick # wal dep
       iperf # local speed checks
       nmap # where in my network is it again...
-      wget # generic "gimme"
-      speedtest-cli # ISP speed check
-      rsync # OUR files
-
-      imagemagick # wal dep
-
       picocom # microcontrollers
+      rsync # our files
+      speedtest-cli # isp speed check
+      wget # generic "gimme"
 
       # docs
-      pandoc
       gnumake
+      pandoc
 
       # Useful utils
-      grex # regex made easy
       git-cliff # useful commit messages
+      grex # regex made easy
 
       # nix tools
-      nix-prefetch-github
       alejandra # nix code formatter
+      nix-prefetch-github
     ]
     ++ lib.optionals stdenv.isDarwin [
       coreutils # provides `dd` with --status=progress
-      wifi-password
       time # GNU time
+      wifi-password
     ]
     ++ lib.optionals stdenv.isLinux [
-      iputils # provides `ping`, `ifconfig`, ...
-      libuuid # `uuidgen` (already pre-installed on mac)
-      ispell # doom emacs
-      iotop # disk top
-      iftop # network top
-      bmon # bandwidth monitor
       bandwhich # bandwidth per process monitor
+      bmon # bandwidth monitor
+      iftop # network top
+      iotop # disk top
+      iputils # provides `ping`, `ifconfig`, ...
+      ispell # doom emacs
+      libuuid # `uuidgen` (already pre-installed on mac)
+      mkvtoolnix # the only container that matters
     ];
 }
