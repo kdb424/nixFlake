@@ -28,11 +28,11 @@ in {
       #   src = lib.cleanSource ./p10k-config;
       #   file = "p10k.zsh";
       # }
-      if zmodload zsh/terminfo && (( terminfo[colors] >= 256 )); then
-        [[ ! -f ${configThemeNormal} ]] || source /home/kdb424/.zsh/plugins/powerlevel10k
-      else
-        [[ ! -f ${configThemeTTY} ]] || source ${configThemeTTY}
-      fi
+      #if zmodload zsh/terminfo && (( terminfo[colors] >= 256 )); then
+        #[[ ! -f ${configThemeNormal} ]] || source /home/kdb424/.zsh/plugins/powerlevel10k
+      #else
+        #[[ ! -f ${configThemeTTY} ]] || source ${configThemeTTY}
+      #fi
     '';
   };
 }

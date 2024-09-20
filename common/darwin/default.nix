@@ -65,4 +65,11 @@ in {
   ];
 
   home-manager.users.kdb424 = import ../../home-manager/machines/cubert.nix;
+
+  # HACK
+  # https://github.com/LnL7/nix-darwin/issues/1082
+  nixpkgs.flake = {
+    setFlakeRegistry = false;
+    setNixPath = false;
+  };
 }
