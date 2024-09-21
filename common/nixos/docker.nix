@@ -19,6 +19,6 @@
   networking.firewall.enable = false;
 
   environment.systemPackages = with pkgs; [
-    docker_24
+    docker
   ];
 }
