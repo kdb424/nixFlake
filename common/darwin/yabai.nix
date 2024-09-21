@@ -37,12 +37,12 @@ in {
       normal_window_border_color = "0xff$CNORM";
       insert_window_border_color = "0xff$CINSE";
       mouse_follows_focus = "off";
-      focus_follows_mouse = "autofocus";
+      focus_follows_mouse = "autoraise";
       window_opacity = "off";
       window_opacity_duration = "0.0";
       active_window_opacity = "1.0";
       normal_window_opacity = "0.90";
-      split_ratio = "0.50";
+      split_ratio = "0.7";
       auto_balance = "off";
       mouse_modifier = "ctrl";
       mouse_action1 = "move";
