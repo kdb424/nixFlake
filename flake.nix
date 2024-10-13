@@ -134,6 +134,10 @@
       scruffy = mkHeadlessNixos [
         ./hosts/scruffy
       ];
+      # Xeon VM
+      yivo = mkHeadlessNixos [
+        ./hosts/yivo
+      ];
     };
 
     darwinConfigurations = {

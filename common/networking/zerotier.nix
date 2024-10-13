@@ -26,5 +26,6 @@
     192.168.194.241 grapheneos.far
     192.168.194.182 trueremote.far
     192.168.194.242 truehome.far
+    192,168.194.155 yivo.far
   '';
 }
